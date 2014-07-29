@@ -1,0 +1,447 @@
+\documentclass[11pt]{article}
+%\usepackage{amsmath, amsthm, enumerate, graphicx, bm, type1cm, amssymb}
+
+\usepackage{amsmath,amsthm,enumerate,graphicx,bm,type1cm,amssymb,epsfig,lscape,setspace,amssymb,url,color,tabu,xcolor,colortbl,rotating}
+
+
+\bibliographystyle{econometrica}
+
+%\usepackage{amsmath, amsthm, enumerate, graphicx, bm, type1cm, amssymb, natbib, remreset}
+%\usepackage{natbib}
+%\usepackage{setspace}
+\theoremstyle{definition}
+\newtheorem{mc}{MC}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{pr}{Proof}
+
+\newtheorem{assump}{Assumption}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{definition}{Definition}[section]
+% \def\stackunder#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+% \renewcommand{\theequation}{\thesection.\arabic{equation}}
+\newtheorem{corol}{Corollary}[section]
+\newcommand{\argmax}{\mathop{\rm \textit{arg} \ \textit{max}}\limits}
+\newcommand{\argmin}{\mathop{\rm \textit{arg} \ \textit{min}}\limits}
+
+\newcommand{\vecop}{{\rm vec}}
+\newcommand{\E}{{\rm E}}
+\newcommand{\Var}{{\rm Var}}
+\newcommand{\determinant}{{\rm det}}
+\newcommand{\tr}{{\rm tr}}
+
+\setlength{\oddsidemargin}{5mm}
+\setlength{\textwidth}{16cm}
+\setlength{\topmargin}{0pt}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\textheight}{23cm}
+\onehalfspacing
+
+\definecolor{Gray}{gray}{0.85}
+
+\title{Using the American Community Survey \\ to Explore the Employment-to-Population Ratio \\ Puzzle of the Great Recession}
+\author{Robert Ackerman \\ University of North Carolina \\ Economics 863 \\ Spring 2014: Dr. Saraswata Chaudhuri}
+% activate to footnote\thanks{Excuse all mistakes.  First attempt at LaTex. E-mail: \texttt{%
+%rkackerm@live.unc.edu}} }
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper seeks the reconcile the disparity in signals of the health of the labor market sent by the unemployment rate and the employment-to-population ratio following  the 2007-2008 recession in the United States.  Following previous recessions, these labor market moved in tandem as the labor market recovered.  However, following this most recent recession the unemployment rate signaled a recovering labor market while the employment-to-population ratio signaled a stagnant labor market.  Using data from the American Community Survey (ACS) I employ a Oaxaca-Blinder style decomposition to show that the changing demographics help to reconcile these apparent mixed signals.  
+\end{abstract}
+
+\section*{ I Introduction}
+\indent
+\par
+In the years following the Great Recession, many policy makers, journalists and economist were skeptical of the recovery in the labor market.  In particular, while the unemployment rate dropped beginning in late 2009 the employment-to-population ratio failed to match the improvements seen in the unemployment rate.  This caused many dismiss the improvements in the unemployment rate as misleading.  For example, economist Mark Thoma, author of the popular Economist's View, referring to the employment-to-population ratio noted "When this ratio begins regaining lost ground consistently, I'll be more optimistic about the state of the labor market"\footnote{Mark Thoma, The Stagnant Employment-Population Ratio, Economist's View, May 2011, retrieved from: http://bit.ly/1ty7zwC}.  Thoma's view is a common one shared in the media, and one that has persisted throughout the past few years\footnote{See comments from Brad Delong, a former Treasury official in the Clinton White House: http://bit.ly/1iGnswe and recent article from CNN Money for other representative views: http://cnnmon.ie/1i6mg5s}.  This pessimism draws on the historical relationship between these two indicators following previous recessions.  Utilizing data from the U.S. Bureau of Labor Statistics' \textit{Current Population Survey}\footnote{U.S. Bureau of Labor Statistics data retrieved from: http://www.bls.gov/data/} Figures 1-3 display the changes in these ratios starting at the beginning of the July 1981, July 1990, and March 2001 recessions\footnote{Recessions starting months reflect the NBER business cycle dates: http://bit.ly/1nEO3u3} respectively, and follow these indicators over the subsequent six year period.  
+
+\begin{center}
+\includegraphics[scale=0.4]{Econ873FinalProjectFigure1.pdf}
+\includegraphics[scale=0.4]{Econ873FinalProjectFigure2.pdf}
+\includegraphics[scale=0.4]{Econ873FinalProjectFigure3.pdf}
+\includegraphics[scale=0.4]{Econ873FinalProjectFigure4.pdf}
+\end{center}
+
+Clearly these indicators displayed a tight correlation following those recessions.  The unemployment rate spikes and then returns to (or surpasses) its previous low, and the employment-to-population ratio drops initially and moves simultaneously back to (or surpasses) its previous high.  This trend extends backwards in time across other previous recessions in the U.S., and this co-movement in indicators was a well known phenomenon.  As evident in Figure 4, following the Great Recession the unemployment rate began to drop around November of 2009, where it peaked at about 5.0 percent above the December 2007 rate, to about 1.7 percent above in December of 2013.  However, unlike previous recessions this 3.3 percent improvement in the unemployment rate was not mirrored by improvement in the employment-to-population ratio, which in November 2009 was 4.2 percent below its December 2007 value, and was still 4.1 percent below in December 2013.  This amounts to just a 0.1 percent improvement over the same period in which the unemployment rate improved by 3.3 percent.  
+
+As this trend persisted, many economists began seeking an explanation to reconcile the divergence from the historical trends.  In particular, work by Samuel Kapon and Joseph Tracy at the New York Fed\footnote{"A Mis-Leading Labor Market Indicator", Samuel Kapon and Joseph Tracy, February 2014, The Federal Reserve Bank of New York, retrieved: http://nyfed.org/1dmsUNS}, sought to explain this disparity as begin driven largely by shifting demographics.  In particular, they note that failing to account for the shifting age profile of the country, comparisons between these indicators can be misleading.  As people age, they are less likely to seek employment.  For example, Figure 5 displays the share of employment by age group for the U.S. in 2012.
+
+\begin{center}
+\includegraphics[scale=0.4]{Econ873FinalProjectFigure5.pdf}
+\end{center}
+
+Between the ages of 16-30 there is a sharp increase in employment which persists through age 50, where employment shares decrease with the largest jumps in the primary retirement ages of the early-to-mid 60.  As the overall population ages, the relative share of individuals in the prime working age years drops.  In particular, the aging of the post-WWII Baby Boomer generation (born 1946-1964) enters prime retirement age this decline will be even more pronounced.  Figure 6 displays the U.S. birth rate (births per 1,000) from 1909-2003.  
+
+\begin{center}
+\includegraphics[scale=0.4]{Econ873FinalProjectFigure6.pdf}
+\end{center}
+
+The post-WWII spike is clearly visible, and represents a significant demographic force.  Individuals born in 1946, the first year of this baby boom, could begin collecting early social security benefits at age 62 in 2008, and full benefits in 2012.  Since the employment-to-population ratio is an indicator about employment, but also about the population, these demographic shifts could have a substantial impact on this indicator.  These demographic shifts could be offsetting actual improvements in the labor market, thus leading to the observed employment-to-population ratio puzzle.  In their analysis, Kapon and Tracy sought to create a "demographically adjusted" employment to population ratio.  They do so by creating 280 cohorts based on decade of birth, sex, race/ethnicity and educational attainment levels.  Having done so, using CPS monthly data they estimate employment profiles for each cohort over time, and construct this "demographically adjusted" ratio, which in addition to being adjusted for demographics, also smooths over business cycles.  Figure 7 displays an approximation of their findings overlaid on the actual CPS data.  
+
+\begin{center}
+\includegraphics[scale=0.4]{Econ873FinalProjectFigure7.pdf}
+\end{center}
+
+They find that the actual employment-to-population ratio was significantly above its smoothed demographically corrected trend prior to the recession, and that since the start of the recession demographics alone account for a 1.7 percent drop in the employment-to-population ratio.  Their findings attracted a good deal of attention and debate\footnote{See John Cochrane's March 2014 post for a thorough discussion: http://bit.ly/1kYbG0W}.  Since then others have replicated and tweaked their results using similar methods and the CPS data.  In this paper, I supplement the existing analysis on the contribution of demographic changes to the stagnant employment-population ratio by utilizing the Census Bureau's American Community Survey (ACS), an annual survey representative of the U.S. population.  I first employ Oaxaca (1973) and Blinder (1973) style decomposition methods to decompose the difference in employment by endowment and coefficient effects in a simple linear model.  I then extend these methods in the spirit of Yun (2004) to a probit model.  I find that differences in demographics explain 1.42 percent and 1.45 percent of the difference between the employment-to-population ratio in 2008 and 2012 for the linear and probit models respectively.  These results are statistically significant at all common levels of significance.  The rest of the paper is outlined as follows: Section II describes the data, Section III describes the models and methods, Section IV outlines the main results, and Section V concludes.
+
+\section*{II The American Community Survey Data}
+\indent
+\par
+The 2005-2012 ACS data used in this study were obtained from the Minnesota Population Center's Integrated Public Use Microdata Series (IPUMS)\footnote{Steven Ruggles, J. Trent Alexander, Katie Genadek, Ronald Goeken, Matthew B. Schroeder, and Matthew Sobek. Integrated Public Use Microdata Series: Version 5.0 [Machine-readable database]. Minneapolis: University of Minnesota, 2010.}.  2005 marked the first year of the survey, which was introduced as a replacement for the long form of the decennial census, in order to update important economic information on an annual rather than decennial basis.  Figure 8 displays the employment-to-population ratio on an annual bases using both the ACS and CPS.  
+
+\begin{center}
+\includegraphics[scale=0.4]{Econ873FinalProjectFigure8.pdf}
+\end{center}
+
+Obviously, there seems to be a sizable difference in how the CPS and ACS are designed, as the CPS estimates are consistently higher than the ACS counterparts.  Nonetheless, aside from a clear shift in levels, the two series tell the same story as it relates to the changes over time in the employment-to-population ratio.  It is this relationship over time that is my primary interest, and not the level itself so direct comparisons between the two in terms of levels are avoided.  Figure 8 serves primarily as a reference point to the discussion in Section I.  The annual ACS sample is around 3,000,000 observations whereas the CPS are monthly samples of around 60,000.  Since the relationship of the employment-to-population ratio between years following the 2008 recession, all following analysis is conducted utilizing a 2008-2012 subsample.  Summary statistics by year are presented in Table 1. The numbers reflect incredible consistency across samples.  Gender shares, average number of children, and educational attainment are steady over the years.  Of particular note however, is the increasing average age of the samples increasing from 39.3 in 2008 to 40.5 in 2012, a positive sign that the aging population could be contributing to a lower employment-to-population ratio.  
+
+\section*{III The Models and Methods}
+\indent
+\par
+
+First, I model employment as a linear function of demographic indicator variables, including age, sex, race/ethnicity, marital status, kids, kids less than five, educational attainment, and census geographic region.  For age, I use indicators for teens (16-19), twenties (20-29) etc.  I allow for individual age indicators for ages 60-69 given their particular significance in terms of social security eligibility and retirement decisions.  The oldest group is nineties (90+)\footnote{My origin specification included indicators for all ages, however when employing the decomposition methods, this proved to be too computationally burdensome, as STATA must store all results in memory.  Even with 8GB memory, this was too much for my computer to handle, and thus I scaled back to this simpler specification.  Both the linear and probit estimates (prior to decomposition) were nearly identical under both specifications, and thus I feel comfortable with this simpler version when I move to decomposition methods}.   Race/ethnicity indicators include White, Black, Hispanic/Latino, Asian/Pacific Islander, and Other.  I include indicators for the presence of kids, and the presence of kids under the age of five.  Educational attainment indicators are broken into four groups: High School or Less, Some College, Bachelor's Degree, and Advanced Degree.  Finally, I generated indicators for the four broad Census regions (Northeast, South, Midwest, and West).  Normalization is done by omitting indicators for male, the teens age group,  the high school or less educational attainment group, and the indicator for the NE region.  The linear model estimated is as follows: 
+
+\begin{equation}
+\text{Employed}_{i} = \beta_0 + \sum_{j=1}^{11} \beta_j I(X_{j}) \sum_{j=12}^{28} \beta_{j} I(\text{Age}_{i}) + \sum_{j=29}^{31} \beta_{j} I(\text{Region}_{i}) + \epsilon_{i}
+\end{equation}
+
+\par
+\noindent
+Where, 
+
+\par
+\hspace{15mm}Employed = \{0,1\} binary outcome
+
+\par
+\hspace{15mm}I(X) = demographic indicators 
+
+\par
+\hspace{15mm}I(Age) = age indicators 
+
+\par
+\hspace{15mm}I(Region) = census region indicators 
+
+\vspace{3mm}  
+\par
+Following a slightly modified version of notation in Blinder (1973), the decomposition analysis is accomplished as follows
+
+\begin{equation*}
+\begin{split}
+E^{B}_i &=\beta^{B}_0 + \sum_{i=1}^n \beta^{B}_j \boldsymbol{X}^{B}_{ji} + \epsilon^{B}_i\text{, and} \\
+E^{R}_i &=\beta^{R}_0 + \sum_{i=1}^n \beta^{R}_j \boldsymbol{X}^{R}_{ji} + \epsilon^{R}_i \\
+\end{split}
+\end{equation*}
+
+Where, the $B$ and $R$ superscripts represent the base year (2008) and comparison recovery year (2009, 2010, 2011, or 2012) groups respectively, $E_i$ represents the employment indicator, and \textbf{$X_{ji}$} contains individual $i$'s value for characteristic $j$, where all demographic indicators from the previous equation are collapsed into a single vector with summation over individuals.  
+
+Ignoring the constant term, the part of the wage differential explained by this proposed regression can be expressed as:
+\begin{equation*}
+\sum_j \beta^B_j \bar{\boldsymbol{X}}^B_j - \sum_j \beta^R_j \bar{\boldsymbol{X}}^R_j
+\end{equation*}
+
+Which, is equivalent to:
+\begin{equation*}
+\sum_j \beta^B_j (\bar{\boldsymbol{X}}^B_j- \bar{\boldsymbol{X}}^R_j) + \sum_j \bar{\boldsymbol{X}}^R_j (\beta^B_j - \beta^R_j )
+\end{equation*}
+
+Yielding the common interpretations of the first sum as "the value of the advantage in endowments possessed by the high-wage group \textit{as evaluated by the high-wage group's wage equation}", and the second as "the difference between how the high-wage equation \textit{would value} the characteristics of the low-wage group and how the low-wage equation \textit{actually values} them\footnote{Blinder (1973) p. 438.  Emphasis original}.  Obviously, Blinder is describing these sums in terms of his original outcome of interest, wages, as opposed to my current outcome variable of interest, employment.  Nonetheless, the interpretation is the same, and throughout I stick with the common convention of calling these the endowment and coefficient effects respectively.  By estimating Equation (1) for each year, I am able to construct these decompositions for each year-pair: 2008-2009, 2008-2010, 2008-2011, and 2008-2012.   
+
+In addition to this linear specification, I also estimate  a binary outcome model where, $P(E=1)=\Phi(\beta X)$ via MLE using the normality assumption of a probit model, using the likelihood analog of Equation (1), where $\Phi(\cdot)$ is the standard normal CDF.  In order to employ the probit appropriate corresponding decomposition analogous to Oaxaca-Blinder, I follow Yun (2004), where he outlines a general method of decomposing differences in the first moment.  The key insight, is in how the proper weighting for each variable's endowment and coefficient contribution to the total difference.  Yun shows a completely general method for doing so, and borrowing and slightly altering no tation, allows for the decomposition to be accomplished as follows.  First let employment be a general function $F(\cdot)$ of the covariates and coefficients:
+\begin{equation*}
+E=F(X\beta)
+\end{equation*}
+
+The mean difference in employment between the base (B) and recovery (R) years can be decomposed as:
+\begin{equation*}
+\bar{E}^{B} - \bar{E}^{R} = \left[ \overline{F(X^{B}\beta^{B})} - \overline{F(X^{R}\beta^{B})}\right] + \left[ \overline{F(X^{R}\beta^{B})} - \overline{F(X^{R}\beta^{R})}\right]
+\end{equation*}
+
+Where an "$\overline{\hspace{5mm}}$" has the common interpretation of the mean.  The detailed equivalent is:
+\begin{equation*}
+\bar{E}^{B} - \bar{E}^{R} = \sum_{j} W^{j}_{\Delta X} \left[ \overline{F(X^{B}\beta^{B})} - \overline{F(X^{R}\beta^{B})}\right] + \sum_{j} W^{j}_{\beta X} \left[ \overline{F(X^{R}\beta^{B})} - \overline{F(X^{R}\beta^{R})}\right]
+\end{equation*}
+
+Where the "j" sums  are over the number of covariates, and:
+\begin{equation*}
+\begin{split}
+W^j_{\Delta X} & = \frac{(\bar{X}^B_j - \bar{X}^R_j)\beta^{B}_{j}f(\bar{X}_{B}\beta_{B})}{(\bar{X}^B - \bar{X}^R)\beta^{B}f(\bar{X}_{B}\beta_{B})} = \frac{(\bar{X}^B_j - \bar{X}^R_j)\beta^{B}_{j}}{(\bar{X}^B - \bar{X}^R)\beta^B} \\
+W^j_{\Delta \beta} & = \frac{\bar{X}^R_J(\beta^B_j - \beta^R_j)f(\bar{X}^R \beta^R)}{\bar{X}^R(\beta^B - \beta^R)f(\bar{X}^R \beta^R)} = \frac{\bar{X}^R_J(\beta^B_j - \beta^R_j)}{\bar{X}^R(\beta^B - \beta^R)}, \text{ and} \\
+\sum_J W^j_{\Delta X} & = \sum_J W^j_{\Delta \beta} = 1 \\
+\end{split}
+\end{equation*} 
+
+Where $f(\cdot)$ is the derivative of $F(\cdot)$, and the $W$'s are weights that sum to one.  Going from Yun's general form to the probit equivalent yields the detailed decomposition:
+\begin{equation*}
+\bar{E}^{B} - \bar{E}^{R} = \sum_{j} W^{j}_{\Delta X} \left[ \overline{\Phi(X^{B}\beta^{B})} - \overline{\Phi(X^{R}\beta^{B})}\right] + \sum_{j} W^{j}_{\beta X} \left[ \overline{\Phi(X^{R}\beta^{B})} - \overline{\Phi(X^{R}\beta^{R})}\right]
+\end{equation*}
+
+The next section details the results of the estimations and decompositions that follow from these models and methods.
+
+\section*{IV Estimation and Results}
+\indent
+\par
+I estimate the model in both linear and probit form, as well as perform the appropriate decompositions for the year-pair combinations 2008-2009, 2008-2010, 2008-2011, and 2008-2012.  Tables 2 \& 3 display the results of the linear and probit decompositions for the 2008-2012 pair respectively.  Of note is the strong statistical significance of the overall decomposition results.  Additionally, the degree of statistical significance for the individual covariates is strong both for endowments and (to a lesser degree) coefficients.  In both models, all of the difference in the endowments of the covariates are statistically significant at all common levels with the exception of the indicator for the South region.  The other year-pair results are similar, and differ only in uninteresting ways (and retain the same statistical significance of the main result).  The headline results of the other pairs are summarized in Tables 4 \& 5.  
+
+The linear model estimates of the employment-to-population ratios are 59.95 percent and 54.68 percent for 2008 and 2012 respectively.  The total difference is about 5.27 percent, of which a little over 1.4 percent is attributed to the differences in endowments across years.  This 1.4 percent is very much in line with the 1.7 percent estimate from Kapon and Tracy's estimates using the CPS data.  This result, and the corresponding differences of 1.51, 0.42, and 0.21 for 2011, 2010, and 2009 respectively, are statistically significant at all common levels of significance as summarized in Table 5.  While, the results across the linear and probit specifications are nearly identical, I prefer the probit estimates because they restrict predicted probabilities to be $\in[0,1]$.  Furthermore, they allow for quick checks on classification.  As summarized in Table 4, the probit models correctly classify (i.e. E=1 if P$>$0.50) between 73-76 percent of the time depending on the year.  The simple demographic model does a fairly good job of correctly identifying the employed (between 86-89 percent correct), but does a poorer job correctly identifying the unemployed (between 56-59 percent correct).  This isn't surprising, as these demographics mostly identify the simple shares of individuals working across age groups.  It is expected to do a poor job for those individuals that are of prime working age, yet are not.  Given the aim of this paper, however, this result is not particularly troubling.  Figure 9 summarizes the results of the probit decomposition estimates by holding demographics at their 2008 levels.  
+
+\begin{center}
+\includegraphics[scale=0.4]{Econ873FinalProjectFigure9.pdf}
+\end{center}
+
+
+\section*{V Conclusion}
+\indent
+\par
+Utilizing the ACS data, and it's large number of observations and representativeness of the U.S. this paper showed the importance of shifting demographics in explaining the persistence in the stagnant employment-to-population ratio following the Great Recession.  These demographic shifts help to explain the divergence in the behavior of this labor market indicator from it's historical pattern of mirroring the improvements in the unemployment rate.  Improvements to the labor market are being offset by a shrinking share of the population that is in prime-working age.  These results line up with the results of other research in this area, specifically with those of Kapon and Tracy, who utilized CPS data in their estimates.  As of 2012, this paper finds that changes in demographics account for the employment-to-population ratio being about 1.4 percent lower than it would be if the demographics of 2008 prevailed.  This confirms the importance of controlling for the changing nature of the population when trying to interpret the employment-to-population ratio as an appropriate measure of labor market health following a recession.
+
+\newpage
+\section*{References}
+\hangindent=2em
+\hangafter=1
+Blinder, Alan S. (1973)., Wage Discrimination: Reduced Form and Structural Estimates.,  \textit{The Journal of Human Resources}. Vol. 8., No. 4 (Autumn, 1973)., 436-455.
+
+\noindent
+\hangindent=2em
+\hangafter=1
+Kapon, Samuel and Tracy, Joseph., (2014). A Mis-Leading Labor Market Indicator., \textit{Liberty Street Economics}, The Federal Reserve Bank of New York.
+
+\noindent
+\hangindent=2em
+\hangafter=1
+Oaxaca, Ronald (1973)., Male-Female Wage Differentials in Urban Labor Markets.,  \textit{International Economic Review}., Vol. 14., No. 3 (Oct., 1973)., 693-709.
+
+\vspace{2mm}
+\noindent
+\hangindent=2em
+\hangafter=1
+Ruggles, Steven., Alexander, J. Trent., Genadek, Katie., Goeken, Ronald., Schroeder Matthew B., and Sobek, Matthew. Integrated Public Use Microdata Series: Version 5.0 [Machine-readable database]. Minneapolis: University of Minnesota, 2010.
+
+\noindent
+\hangindent=2em
+\hangafter=1
+Yun, Myeong-Su (2004)., Decomposing differences in the first moment., \textit{Economic Letters}., (2004)., 82(2)., 273-278
+
+
+
+\vspace{2.5mm}
+\noindent
+\begin{center}
+\begin{tabular}{l c c c c c}
+\hline\hline
+\multicolumn{6}{c}{\textbf{Table 1: ACS Summary Statistics by Year}} \\
+\hline
+ & 2008 & 2009 & 2010 & 2011 & 2012 \\
+\hline
+\underline{Demographics}\textsuperscript{a} &  &  &  &  &  \\
+\hspace{2.5mm}Percent Male & 48.5 & 48.5  & 48.6  & 48.8 & 48.7 \\
+\hspace{2.5mm}Percent Female & 51.5 & 51.5 & 51.4 & 51.2 & 51.3 \\
+\underline{Race/Ethnicity}\textsuperscript{a} &  &  &  &  &  \\
+\hspace{2.5mm}Percent White & 70.5 & 69.8  & 68.7 & 67.7 & 67.4 \\
+\hspace{2.5mm}Percent Black & 9.8 & 9.9 & 10.1 & 10.9 & 10.6 \\
+\hspace{2.5mm}Percent Hispanic or Latino & 12.7 & 13.2 & 13.6 & 13.7 & 14.0 \\
+\hspace{2.5mm}Percent Asian or Pacific Islander & 4.4 & 4.5 & 4.7 & 4.6 & 4.7 \\
+\hspace{2.5mm}Percent Other Race & 2.6 & 2.7 & 2.8 & 3.1 & 3.2 \\
+Mean Age\textsuperscript{a} & 39.3 & 39.5 & 39.7 & 40.3 & 40.5 \\
+Percent Married \textsuperscript{b} & 44.1 & 43.8 & 43.1 & 42.0 & 42.2 \\
+Mean Number of Children\textsuperscript{b} & 0.7 & 0.7 & 0.7 & 0.7 & 0.7 \\
+\underline{Employment} & & & &  &  \\
+Mean Annual Wages\textsuperscript{c} (\$) & 42472 & 42934 & 42564 & 42171 & 43656 \\
+Employment-to-Population Ratio\textsuperscript{d} & 59.95 & 57.16 & 55.99 & 54.06 & 54.68 \\
+Unemployment Rate \textsuperscript{d} & 5.8 & 9.2 & 10.2 & 9.7 & 8.8 \\
+\underline{Educational Attainment}\textsuperscript{b}  &  &  &  & \\
+High School or Less  & 42.5 & 42.4 & 42.3 & 43.5 & 42.3 \\
+Some College & 28.8 & 28.9 & 28.7 & 28.5 & 28.8 \\
+Bachelor's  & 17.8 & 17.7 & 17.9 & 17.1 & 17.8 \\
+Advanced Degree  & 10.9 & 11.0 & 11.1 & 10.9 & 11.2 \\
+\hline
+Number of Observations & 3,000,657 & 3,030,728 & 3,061,692 & 3,112,017 & 3,113,030   \\
+\hline\hline
+\multicolumn{6}{l}{\scriptsize{\textsuperscript{a}Full sample. Note percentages might not sum to 100 due to rounding.}} \\
+\multicolumn{6}{l}{\scriptsize{\textsuperscript{b}Percent, ages 25 and over.  \textsuperscript{c}Employed, ages 16 and over. Note: Not adjusted for inflation.}} \\
+\multicolumn{6}{l}{\scriptsize{\textsuperscript{d}Percent, ages 16 and over. Values in parentheses are standard errors.}} \\
+\end{tabular} 
+\end{center}
+
+\vspace{2.5mm}
+\noindent
+\begin{center}
+\begin{tabular}{l c c c c}
+\hline\hline
+\multicolumn{5}{c}{\textbf{Table 2: Linear Decomposition Results}} \\
+\hline
+ & Difference from  &  &  Difference from &  \\
+Variable & Endowment & P-value &  Coefficient & P-value \\
+\hline
+Total & 0.0142 & 0.000 & 0.0385 & 0.000 \\
+ Female & -0.0002 & 0.000 & -0.0088 & 0.000 \\
+ Married & 0.0013 & 0.000 & -0.1395 & 0.000 \\
+ Kids  & 0.0012 & 0.000 & -0.0037 & 0.000 \\
+ Kids(Age$<$5)  & -0.0007 & 0.000 & -0.0010 & 0.000 \\
+ Black & 0.0008 & 0.000 & 0.0020 & 0.000 \\
+ Hispanic/Latino  & 0.0002 & 0.000 & 0.0000 & 0.838 \\
+ Asian/Pacific Islander  & 0.0002 & 0.000 & 0.0001 & 0.096 \\
+ Other & 0.0004 & 0.000 & 0.0004 & 0.000 \\
+ Some College  & -0.0007 & 0.000 & -0.0004 & 0.164 \\
+ Bachelor's  & 0.0002 & 0.000 & -0047 & 0.000 \\
+ Advanced Degree  & -0.0005 & 0.000 & -0.0032 & 0.000 \\
+ Twenties  & -0.0011 & 0.000 & -0.0006 & 0.044 \\
+ Thirties  & 0.0037 & 0.000 & -0.0008 & 0.010 \\
+ Forties  & 0.0067 & 0.000 & -0.0019 & 0.000 \\
+ Fifties  & -0.0006 & 0.000 & -0.0042 & 0.000 \\
+ 60  & -0.0001 & 0.000 & -0.0007 & 0.000 \\
+ 61  & 0.0001 & 0.000 & -0.0007 & 0.000 \\
+ 62 & -0.0003 & 0.000 & -0.0005 & 0.000 \\
+ 63  & -0.0001 & 0.000 & -0.0006 & 0.000 \\
+ 64  & -0.0000 & 0.000 & -0.0007 & 0.000 \\
+ 65 & 0.0001 & 0.000 & -0.0008 & 0.000 \\
+ 66  & 0.0000 & 0.000 & -0.0006 & 0.000 \\
+ 67  & 0.0001 & 0.000 & -0.0006 & 0.000 \\
+ 68  & 0.0002 & 0.000 & -0.0005 & 0.000 \\
+ 69  & 0.0004 & 0.000 & -0.0005 & 0.000 \\
+ Seventies  & 0.0011 & 0.000 & -0.0049 & 0.000 \\
+ Eighties  & 0.0007 & 0.000 & -0.0029 & 0.000 \\
+ Nineties  & 0.0007 & 0.000 & -0.0007 & 0.000 \\
+ South  & 0.000 & 0.235 & 0.0016 & 0.000 \\
+ Midwest  & 0.0001 & 0.000 & 0.0002 & 0.407 \\
+ West & 0.0001 & 0.000 & 0.0015 & 0.000 \\
+ Constant & - & - & 0.0904 & 0.000 \\
+\hline\hline
+\end{tabular} 
+\end{center}
+
+\vspace{2.5mm}
+\noindent
+\begin{center}
+\begin{tabular}{l c c c c}
+\hline\hline
+\multicolumn{5}{c}{\textbf{Table 3: Probit Decomposition Results}} \\
+\hline
+ & Difference from  &  &  Difference from &  \\
+Variable & Endowment & P-value &  Coefficient & P-value \\
+\hline
+Total & 0.0145 & 0.000 & 0.0382 & 0.000 \\
+ Female & -0.0003 & 0.000 & -0.0108 & 0.000 \\
+ Married & 0.0014 & 0.000 & -0.0131 & 0.000 \\
+ Kids  & 0.0013 & 0.000 & -0.0019 & 0.000 \\
+ Kids(Age$<$5)  & -0.0008 & 0.000 & -0.0013 & 0.000 \\
+ Black & 0.0008 & 0.000 & 0.0016 & 0.000 \\
+ Hispanic/Latino  & 0.0002 & 0.000 & -0.0000 & 0.778 \\
+ Asian/Pacific Islander  & 0.0002 & 0.000 & 0.0001 & 0.414 \\
+ Other & 0.0004 & 0.000 & 0.0003 & 0.000 \\
+ Some College  & -0.0007 & 0.000 & 0.0009 & 0.003 \\
+ Bachelor's  & 0.0002 & 0.000 & -0.0035 & 0.000 \\
+ Advanced Degree  & -0.0006 & 0.000 & -0.0025 & 0.000 \\
+ Twenties  & -0.0009 & 0.000 & -0.0009 & 0.000 \\
+ Thirties  & 0.0031 & 0.000 & -0.0004 & 0.119 \\
+ Forties  & 0.0055 & 0.000 & -0.0015 & 0.000 \\
+ Fifties  & -0.0004 & 0.000 & -0.0046 & 0.000 \\
+ 60  & -0.0001 & 0.000 & -0.0008 & 0.000 \\
+ 61  & 0.0001 & 0.000 & -0.0007 & 0.000 \\
+ 62 & -0.0001 & 0.000 & -0.0006 & 0.000 \\
+ 63  & -0.0000 & 0.000 & -0.0006 & 0.000 \\
+ 64  & 0.0000 & 0.000 & -0.0006 & 0.000 \\
+ 65 & 0.0002 & 0.000 & -0.0007 & 0.000 \\
+ 66  & 0.0001 & 0.000 & -0.0005 & 0.000 \\
+ 67  & 0.0001 & 0.000 & -0.0005 & 0.000 \\
+ 68  & 0.0003 & 0.000 & -0.0005 & 0.000 \\
+ 69  & 0.0004 & 0.000 & -0.0005 & 0.000 \\
+ Seventies  & 0.013 & 0.000 & -0.0044 & 0.000 \\
+ Eighties  & 0.0011 & 0.000 & -0.0025 & 0.000 \\
+ Nineties  & 0.0014 & 0.000 & -0.0004 & 0.001 \\
+ South  & 0.0000 & 0.235 & 0.0016 & 0.000 \\
+ Midwest  & 0.0001 & 0.000 & 0.0004 & 0.166 \\
+ West & 0.0001 & 0.000 & 0.0014 & 0.000 \\
+ Constant & - & - & 0.0859 & 0.000 \\
+\hline\hline
+\end{tabular} 
+\end{center}
+
+\small{
+\vspace{2.5mm}
+\noindent
+\begin{center}
+\begin{tabular}{l c c c c c c c c c c c}
+\hline\hline
+\multicolumn{11}{c}{\textbf{Table 4: Linear and Probit Results}} \\
+\hline
+ & \multicolumn{5}{c}{\underline{\hspace{20mm} Linear \hspace{20mm}}} & \multicolumn{5}{c}{\underline{\hspace{20mm} Probit \hspace{20mm}}} \\
+ Variable & 2008 & 2009 & 2010 & 2011 & 2012 & 2008 & 2009 & 2010 & 2011 & 2012 \\
+\hline
+Mean & 59.95 & 57.16 & 55.99 & 54.06 & 54.68 & 60.04 & 57.24 & 56.06 & 54.14 & 54.77 \\
+Min & -14.24 & -15.16 & -16.19 & -17.66 & -17.63 & 0.20 & 0.15 & 0.16 & 0.12 & 0.12 \\
+Max & 101.37 & 99.44 & 99.15 & 99.04 & 99.95 & 95.11 & 93.99 & 93.79 & 93.80 & 94.25 \\
+Correctly Classified & - & - & - & - & - & 76.05  & 74.48 & 73.91 & 73.28 & 73.65 \\
+Sensitivity & - & - & - & - & - & 88.99  & 88.10 & 87.77 & 86.11 & 86.30 \\
+Specificity & - & - & - & - & - & 56.67  & 56.32 & 56.27 & 58.19 & 58.39 \\
+\hline\hline
+\multicolumn{11}{l}{Note: Values are in percentage terms}
+\end{tabular} 
+\end{center}}
+
+\vspace{25mm}
+\noindent
+\begin{center}
+\begin{tabular}{l c c c c c c c c c}
+\hline\hline
+\multicolumn{9}{c}{\textbf{Table 5: Decomposition Results}} \\
+\hline
+ & \multicolumn{4}{c}{\underline{\hspace{15mm} Linear \hspace{15mm}}} & \multicolumn{4}{c}{\underline{ \hspace{15mm} Probit \hspace{15mm}}} \\
+ Variable & 2009 & 2010 & 2011 & 2012 & 2009 & 2010 & 2011 & 2012 \\
+\hline
+2008 Mean & 59.95 & 59.95 & 59.95 & 59.95 & 60.04 & 60.04 & 60.04 & 60.04 \\
+  & (0.032) & (0.032) & (0.032) & (0.032) & (0.031) & (0.031) & (0.031) & (0.031) \\
+Mean & 57.16 & 55.99 & 54.06 & 54.68 & 57.24 & 56.06 & 54.14 & 54.77 \\
+  & (0.032) & (0.32) & (0.031) & (0.031) & (0.031) & (0.031) & (0.031) & (0.031) \\
+Difference & 2.79 & 3.96 & 5.90 & 5.27 & 2.80 & 3.98 & 5.90 & 5.27 \\
+  & (0.045) & (0.045) & (0.045) & (0.045) & (0.044) & (0.044) & (0.044) & (0.044) \\
+Endowments & 0.21 & 0.41 & 1.50 & 1.42 & 0.21 & 0.42 & 1.51 & 1.45 \\
+  & (0.024) & (0.24) & (0.024) & (0.024) & (0.023) & (0.023) & (0.023) & (0.023) \\
+Coefficients & 2.58 & 3.55 & 4.40 & 3.85 & 2.59 & 3.55 & 4.40 & 3.82 \\
+  & (0.38) & (0.038) & (0.038) & (0.037) & (0.038) & (0.038) & (0.037) & (0.037) \\
+\hline\hline
+\multicolumn{9}{l}{Note: Values are in percentage terms. Values in parentheses are robust standard errors.} \\
+\end{tabular} 
+\end{center}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

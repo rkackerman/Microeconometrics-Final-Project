@@ -1,0 +1,1627 @@
+---------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/robertackerman/Desktop/School/Econ 873/Econ873_Final_Project_Ackerman_v2.log
+  log type:  text
+ opened on:   7 Apr 2014, 21:08:39
+
+. 
+. *load 2011 ACS Data
+
+. use ACS_2001_2012.dta
+
+. set more off
+
+. tab age
+
+                                 Age |      Freq.     Percent        Cum.
+-------------------------------------+-----------------------------------
+                Less than 1 year old |    324,937        1.13        1.13
+                                   1 |    330,616        1.15        2.27
+                                   2 |    345,714        1.20        3.47
+                                   3 |    349,447        1.21        4.69
+                                   4 |    353,497        1.23        5.91
+                                   5 |    358,602        1.24        7.16
+                                   6 |    359,064        1.25        8.40
+                                   7 |    363,795        1.26        9.67
+                                   8 |    368,289        1.28       10.94
+                                   9 |    371,525        1.29       12.23
+                                  10 |    379,853        1.32       13.55
+                                  11 |    380,979        1.32       14.87
+                                  12 |    389,655        1.35       16.23
+                                  13 |    392,853        1.36       17.59
+                                  14 |    397,127        1.38       18.97
+                                  15 |    402,692        1.40       20.37
+                                  16 |    407,579        1.41       21.78
+                                  17 |    406,964        1.41       23.19
+                                  18 |    397,661        1.38       24.57
+                                  19 |    368,354        1.28       25.85
+                                  20 |    349,065        1.21       27.06
+                                  21 |    337,617        1.17       28.23
+                                  22 |    326,839        1.13       29.37
+                                  23 |    322,854        1.12       30.49
+                                  24 |    321,210        1.11       31.60
+                                  25 |    327,766        1.14       32.74
+                                  26 |    323,722        1.12       33.86
+                                  27 |    326,631        1.13       35.00
+                                  28 |    328,215        1.14       36.14
+                                  29 |    325,783        1.13       37.27
+                                  30 |    345,044        1.20       38.46
+                                  31 |    330,102        1.15       39.61
+                                  32 |    337,992        1.17       40.78
+                                  33 |    337,920        1.17       41.95
+                                  34 |    345,815        1.20       43.15
+                                  35 |    360,282        1.25       44.40
+                                  36 |    357,323        1.24       45.64
+                                  37 |    363,889        1.26       46.91
+                                  38 |    373,580        1.30       48.20
+                                  39 |    377,743        1.31       49.51
+                                  40 |    408,930        1.42       50.93
+                                  41 |    392,118        1.36       52.29
+                                  42 |    404,864        1.40       53.70
+                                  43 |    408,764        1.42       55.12
+                                  44 |    414,099        1.44       56.55
+                                  45 |    435,337        1.51       58.07
+                                  46 |    429,697        1.49       59.56
+                                  47 |    437,951        1.52       61.08
+                                  48 |    441,713        1.53       62.61
+                                  49 |    439,516        1.53       64.13
+                                  50 |    462,953        1.61       65.74
+                                  51 |    433,267        1.50       67.24
+                                  52 |    434,295        1.51       68.75
+                                  53 |    428,736        1.49       70.24
+                                  54 |    422,953        1.47       71.71
+                                  55 |    421,360        1.46       73.17
+                                  56 |    402,601        1.40       74.57
+                                  57 |    395,616        1.37       75.94
+                                  58 |    388,099        1.35       77.29
+                                  59 |    372,697        1.29       78.58
+                                  60 |    371,285        1.29       79.87
+                                  61 |    344,574        1.20       81.06
+                                  62 |    338,850        1.18       82.24
+                                  63 |    321,069        1.11       83.35
+                                  64 |    308,086        1.07       84.42
+                                  65 |    298,958        1.04       85.46
+                                  66 |    271,470        0.94       86.40
+                                  67 |    262,188        0.91       87.31
+                                  68 |    251,759        0.87       88.19
+                                  69 |    239,929        0.83       89.02
+                                  70 |    235,047        0.82       89.83
+                                  71 |    216,769        0.75       90.59
+                                  72 |    212,439        0.74       91.32
+                                  73 |    203,438        0.71       92.03
+                                  74 |    195,205        0.68       92.71
+                                  75 |    191,816        0.67       93.37
+                                  76 |    181,930        0.63       94.00
+                                  77 |    174,619        0.61       94.61
+                                  78 |    166,319        0.58       95.19
+                                  79 |    159,050        0.55       95.74
+                                  80 |    154,096        0.53       96.27
+                                  81 |    140,757        0.49       96.76
+                                  82 |    131,835        0.46       97.22
+                                  83 |    121,315        0.42       97.64
+                                  84 |    110,278        0.38       98.02
+                                  85 |    100,045        0.35       98.37
+                                  86 |     86,676        0.30       98.67
+                                  87 |     74,069        0.26       98.93
+                                  88 |     59,863        0.21       99.14
+                                  89 |     40,433        0.14       99.28
+           90 (90+ in 1980 and 1990) |     23,794        0.08       99.36
+                                  91 |     19,216        0.07       99.43
+                                  92 |     48,650        0.17       99.59
+                                  93 |     66,636        0.23       99.83
+                                  94 |     47,686        0.17       99.99
+                                  95 |      2,713        0.01      100.00
+-------------------------------------+-----------------------------------
+                               Total | 28,817,023      100.00
+
+. tab birthyr
+
+    Year of |
+      birth |      Freq.     Percent        Cum.
+------------+-----------------------------------
+       1906 |         52        0.00        0.00
+       1907 |      1,346        0.00        0.00
+       1908 |      3,697        0.01        0.02
+       1909 |      2,392        0.01        0.03
+       1910 |      2,817        0.01        0.04
+       1911 |      2,763        0.01        0.05
+       1912 |     13,104        0.05        0.09
+       1913 |     28,997        0.10        0.19
+       1914 |     32,457        0.11        0.30
+       1915 |     32,065        0.11        0.42
+       1916 |     32,717        0.11        0.53
+       1917 |     41,696        0.14        0.67
+       1918 |     56,309        0.20        0.87
+       1919 |     58,744        0.20        1.07
+       1920 |     63,510        0.22        1.29
+       1921 |     77,078        0.27        1.56
+       1922 |     92,802        0.32        1.88
+       1923 |    104,684        0.36        2.25
+       1924 |    117,657        0.41        2.65
+       1925 |    128,809        0.45        3.10
+       1926 |    137,079        0.48        3.58
+       1927 |    147,596        0.51        4.09
+       1928 |    156,232        0.54        4.63
+       1929 |    161,525        0.56        5.19
+       1930 |    171,607        0.60        5.79
+       1931 |    177,270        0.62        6.40
+       1932 |    181,131        0.63        7.03
+       1933 |    185,210        0.64        7.67
+       1934 |    189,210        0.66        8.33
+       1935 |    203,544        0.71        9.04
+       1936 |    209,963        0.73        9.77
+       1937 |    216,553        0.75       10.52
+       1938 |    229,509        0.80       11.31
+       1939 |    236,404        0.82       12.13
+       1940 |    245,199        0.85       12.98
+       1941 |    259,512        0.90       13.88
+       1942 |    279,120        0.97       14.85
+       1943 |    312,468        1.08       15.94
+       1944 |    303,240        1.05       16.99
+       1945 |    302,873        1.05       18.04
+       1946 |    316,124        1.10       19.14
+       1947 |    401,597        1.39       20.53
+       1948 |    391,820        1.36       21.89
+       1949 |    386,759        1.34       23.23
+       1950 |    390,936        1.36       24.59
+       1951 |    400,725        1.39       25.98
+       1952 |    411,402        1.43       27.41
+       1953 |    422,390        1.47       28.87
+       1954 |    427,572        1.48       30.36
+       1955 |    438,091        1.52       31.88
+       1956 |    445,721        1.55       33.42
+       1957 |    453,642        1.57       35.00
+       1958 |    452,885        1.57       36.57
+       1959 |    447,500        1.55       38.12
+       1960 |    449,282        1.56       39.68
+       1961 |    450,794        1.56       41.25
+       1962 |    440,904        1.53       42.78
+       1963 |    433,957        1.51       44.28
+       1964 |    427,818        1.48       45.77
+       1965 |    411,879        1.43       47.20
+       1966 |    389,034        1.35       48.55
+       1967 |    378,476        1.31       49.86
+       1968 |    370,619        1.29       51.15
+       1969 |    374,682        1.30       52.45
+       1970 |    384,281        1.33       53.78
+       1971 |    385,044        1.34       55.12
+       1972 |    356,309        1.24       56.35
+       1973 |    335,811        1.17       57.52
+       1974 |    323,358        1.12       58.64
+       1975 |    325,000        1.13       59.77
+       1976 |    320,287        1.11       60.88
+       1977 |    323,578        1.12       62.00
+       1978 |    323,944        1.12       63.13
+       1979 |    323,650        1.12       64.25
+       1980 |    333,710        1.16       65.41
+       1981 |    330,968        1.15       66.56
+       1982 |    328,332        1.14       67.70
+       1983 |    326,305        1.13       68.83
+       1984 |    322,492        1.12       69.95
+       1985 |    332,785        1.15       71.10
+       1986 |    339,696        1.18       72.28
+       1987 |    347,403        1.21       73.49
+       1988 |    366,950        1.27       74.76
+       1989 |    381,957        1.33       76.08
+       1990 |    399,889        1.39       77.47
+       1991 |    411,187        1.43       78.90
+       1992 |    414,880        1.44       80.34
+       1993 |    411,938        1.43       81.77
+       1994 |    399,685        1.39       83.16
+       1995 |    388,554        1.35       84.50
+       1996 |    380,586        1.32       85.82
+       1997 |    373,628        1.30       87.12
+       1998 |    371,280        1.29       88.41
+       1999 |    369,070        1.28       89.69
+       2000 |    368,166        1.28       90.97
+       2001 |    362,773        1.26       92.23
+       2002 |    336,330        1.17       93.39
+       2003 |    322,279        1.12       94.51
+       2004 |    305,534        1.06       95.57
+       2005 |    287,949        1.00       96.57
+       2006 |    253,312        0.88       97.45
+       2007 |    218,963        0.76       98.21
+       2008 |    180,598        0.63       98.84
+       2009 |    139,353        0.48       99.32
+       2010 |    100,154        0.35       99.67
+       2011 |     64,255        0.22       99.89
+       2012 |     31,250        0.11      100.00
+------------+-----------------------------------
+      Total | 28,817,023      100.00
+
+. 
+. gen cohort2010s = 0
+
+. replace cohort2010s = 1 if birthyr >= 2010 
+(195659 real changes made)
+
+. gen cohort2000s = 0
+
+. replace cohort2000s = 1 if birthyr >= 2000 & birthyr<=2009
+(2775257 real changes made)
+
+. gen cohort90s = 0
+
+. replace cohort90s = 1 if birthyr >= 1990 & birthyr<=1999
+(3920697 real changes made)
+
+. gen cohort80s = 0
+
+. replace cohort80s = 1 if birthyr >= 1980 & birthyr<=1989
+(3410598 real changes made)
+
+. gen cohort70s = 0
+
+. replace cohort70s = 1 if birthyr >= 1970 & birthyr<=1979
+(3401262 real changes made)
+
+. gen cohort60s = 0
+
+. replace cohort60s = 1 if birthyr >= 1960 & birthyr<=1969
+(4127445 real changes made)
+
+. gen cohort50s = 0
+
+. replace cohort50s = 1 if birthyr >= 1950 & birthyr<=1959
+(4290864 real changes made)
+
+. gen cohort40s = 0
+
+. replace cohort40s = 1 if birthyr >= 1940 & birthyr<=1949
+(3198712 real changes made)
+
+. gen cohort30s = 0
+
+. replace cohort30s = 1 if birthyr >= 1930 & birthyr<=1939
+(2000401 real changes made)
+
+. gen cohort20s = 0
+
+. replace cohort20s = 1 if birthyr >= 1920 & birthyr<=1929
+(1186972 real changes made)
+
+. gen cohort10s = 0
+
+. replace cohort10s = 1 if birthyr >= 1910 & birthyr<=1919
+(301669 real changes made)
+
+. gen cohort1900s = 0
+
+. replace cohort1900s = 1 if birthyr >= 1900 & birthyr<=1910
+(10304 real changes made)
+
+. 
+. gen dummy=.
+(28817023 missing values generated)
+
+. replace dummy=0 if year==2007
+(2994662 real changes made)
+
+. replace dummy=1 if year==2012
+(3113030 real changes made)
+
+. 
+. gen educattd=.
+(28817023 missing values generated)
+
+. label var educattd "Educational Attainment-Detailed"
+
+. replace educattd=1 if educd<=61
+(9886345 real changes made)
+
+. replace educattd=2 if educd==62 | educd==63 | educd==64
+(6550202 real changes made)
+
+. replace educattd=3 if educd==65 | educd==71
+(4984969 real changes made)
+
+. replace educattd=4 if educd==81 | educd==82 | educd==83
+(1589345 real changes made)
+
+. replace educattd=5 if educd==101
+(3668706 real changes made)
+
+. replace educattd=6 if educd==114
+(1486516 real changes made)
+
+. replace educattd=7 if educd==115
+(409575 real changes made)
+
+. replace educattd=8 if educd==116
+(241365 real changes made)
+
+. label define educattd_lbl 1 `"Less Than High School"'
+
+. label define educattd_lbl 2 `"High School"', add
+
+. label define educattd_lbl 3 `"Some College"', add
+
+. label define educattd_lbl 4 `"Associates Degree"', add
+
+. label define educattd_lbl 5 `"Bachelors Degree"', add
+
+. label define educattd_lbl 6 `"Masters Degree"', add
+
+. label define educattd_lbl 7 `"Professional Degree"', add
+
+. label define educattd_lbl 8 `"Doctoral Degree"', add
+
+. label values educattd educattd_lbl
+
+. 
+. gen educattd2=.
+(28817023 missing values generated)
+
+. label var educattd2 "Educational Attainment-Detailed Version 3"
+
+. replace educattd2=1 if educattd==1 | educattd==2
+(16436547 real changes made)
+
+. replace educattd2=2 if educattd==3 | educattd==4
+(6574314 real changes made)
+
+. replace educattd2=3 if educattd==5
+(3668706 real changes made)
+
+. replace educattd2=4 if educattd==6 |educattd==7 | educattd==8
+(2137456 real changes made)
+
+. label define educattd2_lbl 1 `"High School or Less"'
+
+. label define educattd2_lbl 2 `"Some College"', add
+
+. label define educattd2_lbl 3 `"Bachelors"', add
+
+. label define educattd2_lbl 4 `"More Than Bachelors"', add
+
+. label values educattd2 educattd2_lbl
+
+. 
+. gen highschoolorless=0
+
+. replace highschoolorless=1 if educattd2==1 
+(16436547 real changes made)
+
+. gen somecollege=0
+
+. replace somecollege=1 if educattd2==2
+(6574314 real changes made)
+
+. gen college=0
+
+. replace college=1 if educattd2==3
+(3668706 real changes made)
+
+. gen morecollege=0
+
+. replace morecollege=1 if educattd2==4
+(2137456 real changes made)
+
+. 
+. gen male=.
+(28817023 missing values generated)
+
+. label var male "Male"
+
+. replace male=1 if sex==1
+(13979397 real changes made)
+
+. replace male=0 if sex==2
+(14837626 real changes made)
+
+. label define male_lbl 0 `"No"'
+
+. label define male_lbl 1 `"Yes"', add
+
+. label values male male_lbl
+
+. 
+. gen female=.
+(28817023 missing values generated)
+
+. label var female "Female"
+
+. replace female=1 if sex==2
+(14837626 real changes made)
+
+. replace female=0 if sex==1
+(13979397 real changes made)
+
+. label define female_lbl 0 `"No"'
+
+. label define female_lbl 1 `"Yes"', add
+
+. label values female female_lbl
+
+. 
+. gen racesimp=.
+(28817023 missing values generated)
+
+. label var racesimp "Race/Ethnicity Simplified Version"
+
+. replace racesimp=1 if hispan==0 & race==1
+(20393147 real changes made)
+
+. replace racesimp=2 if hispan==0 & race==2
+(2831027 real changes made)
+
+. replace racesimp=4 if hispan==0 & race==4 | race==5 | race==6
+(1264138 real changes made)
+
+. replace racesimp=5 if hispan==0 & race==3 | race==7 | race==8 | race==9
+(2062830 real changes made)
+
+. replace racesimp=3 if hispan!=0
+(3574488 real changes made)
+
+. label define racesimp_lbl 1 `"White"'
+
+. label define racesimp_lbl 2 `"Black"', add
+
+. label define racesimp_lbl 3 `"Hispanic or Latino"', add
+
+. label define racesimp_lbl 4 `"Asian or Pacific Islander"', add
+
+. label define racesimp_lbl 5 `"Other Race"', add
+
+. label values racesimp racesimp_lbl 
+
+. 
+. gen white = 0
+
+. replace white = 1 if racesimp==1
+(20393147 real changes made)
+
+. gen black = 0
+
+. replace black = 1 if racesimp==2
+(2831027 real changes made)
+
+. gen hispanic = 0
+
+. replace hispanic = 1 if racesimp==3
+(3574488 real changes made)
+
+. gen asian = 0
+
+. replace asian = 1 if racesimp==4
+(1247657 real changes made)
+
+. gen other = 0
+
+. replace other = 1 if racesimp==5
+(770704 real changes made)
+
+. 
+. gen employed=1 if empstat==1
+(15570506 missing values generated)
+
+. reg employed cohort2010s cohort2000s cohort90s cohort80s cohort70s cohort60s cohort50s cohort40s cohort30s cohort20
+> s cohort10s cohort1900s somecollege college morecollege female black hispanic asian other
+note: cohort2010s omitted because of collinearity
+note: cohort2000s omitted because of collinearity
+
+      Source |       SS       df       MS              Number of obs =13246517
+-------------+------------------------------           F( 18,13246498) =       .
+       Model |           0    18           0           Prob > F      =       .
+    Residual |           013246498           0           R-squared     =       .
+-------------+------------------------------           Adj R-squared =       .
+       Total |           013246516           0           Root MSE      =       0
+
+------------------------------------------------------------------------------
+    employed |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+ cohort2010s |          0  (omitted)
+ cohort2000s |          0  (omitted)
+   cohort90s |          0  (omitted)
+   cohort80s |          0  (omitted)
+   cohort70s |          0  (omitted)
+   cohort60s |          0  (omitted)
+   cohort50s |          0  (omitted)
+   cohort40s |          0  (omitted)
+   cohort30s |          0  (omitted)
+   cohort20s |          0  (omitted)
+   cohort10s |          0  (omitted)
+ cohort1900s |          0  (omitted)
+ somecollege |          0  (omitted)
+     college |          0  (omitted)
+ morecollege |          0  (omitted)
+      female |          0  (omitted)
+       black |          0  (omitted)
+    hispanic |          0  (omitted)
+       asian |          0  (omitted)
+       other |          0  (omitted)
+       _cons |          1          .        .       .            .           .
+------------------------------------------------------------------------------
+
+. logit employed somecollege college morecollege male black hispanic asian other
+
+outcome does not vary; remember:
+                                  0 = negative outcome,
+        all other nonmissing values = positive outcome
+r(2000);
+
+. tab empstat
+
+ Employment status |
+ [general version] |      Freq.     Percent        Cum.
+-------------------+-----------------------------------
+               N/A |  5,868,658       20.37       20.37
+          Employed | 13,246,517       45.97       66.33
+        Unemployed |  1,083,094        3.76       70.09
+Not in labor force |  8,618,754       29.91      100.00
+-------------------+-----------------------------------
+             Total | 28,817,023      100.00
+
+. tab employed
+
+   employed |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 | 13,246,517      100.00      100.00
+------------+-----------------------------------
+      Total | 13,246,517      100.00
+
+. replace employed=0 if employed!=1
+(15570506 real changes made)
+
+. reg employed cohort2010s cohort2000s cohort90s cohort80s cohort70s cohort60s cohort50s cohort40s cohort30s cohort20
+> s cohort10s cohort1900s somecollege college morecollege female black hispanic asian other
+
+      Source |       SS       df       MS              Number of obs =28817023
+-------------+------------------------------           F( 20,28817002) =       .
+       Model |  2884445.34    20  144222.267           Prob > F      =  0.0000
+    Residual |  4272955.0828817002   .14827896           R-squared     =  0.4030
+-------------+------------------------------           Adj R-squared =  0.4030
+       Total |  7157400.4228817022  .248374048           Root MSE      =  .38507
+
+------------------------------------------------------------------------------
+    employed |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+ cohort2010s |   .0256761    .008585     2.99   0.003     .0088498    .0425023
+ cohort2000s |   .0245156   .0085438     2.87   0.004     .0077701    .0412612
+   cohort90s |   .1127199   .0085428    13.19   0.000     .0959763    .1294635
+   cohort80s |   .5551577   .0085432    64.98   0.000     .5384133     .571902
+   cohort70s |   .6789853   .0085433    79.48   0.000     .6622407    .6957299
+   cohort60s |   .6941224   .0085428    81.25   0.000     .6773789     .710866
+   cohort50s |   .6506148   .0085427    76.16   0.000     .6338715    .6673581
+   cohort40s |   .3924684   .0085433    45.94   0.000     .3757239     .409213
+   cohort30s |    .112006   .0085448    13.11   0.000     .0952585    .1287535
+   cohort20s |   .0174921   .0085477     2.05   0.041     .0007389    .0342454
+   cohort10s |  -.0027735   .0085113    -0.33   0.745    -.0194554    .0139083
+ cohort1900s |  -.0003819   .0072893    -0.05   0.958    -.0146686    .0139048
+ somecollege |   .1367091   .0001925   710.29   0.000     .1363318    .1370863
+     college |   .1819592   .0002391   761.11   0.000     .1814906    .1824277
+ morecollege |   .2190453   .0002942   744.55   0.000     .2184687     .219622
+      female |  -.0663365   .0001439  -460.93   0.000    -.0666185   -.0660544
+       black |  -.0653233   .0002458  -265.71   0.000    -.0658051   -.0648414
+    hispanic |   -.015153   .0002261   -67.01   0.000    -.0155962   -.0147098
+       asian |  -.0443554   .0003567  -124.34   0.000    -.0450546   -.0436562
+       other |  -.0546468    .000449  -121.70   0.000    -.0555268   -.0537667
+       _cons |   .0228674   .0085411     2.68   0.007     .0061271    .0396077
+------------------------------------------------------------------------------
+
+. oaxaca employed female black hispanic asian other somecollege college morecollege cohort10s cohort20s cohort30s coh
+> ort40s cohort50s cohort60s cohort70s cohort80s cohort90s cohort2000s cohort2010s, by(dummy)
+(model 1 has zero variance coefficients)
+dropped coefficients or zero variances encountered
+specify -noisily- to view model estimation output
+specify -relax- to ingnore
+r(499);
+
+. oaxaca employed female black hispanic asian other somecollege college morecollege cohort10s cohort20s cohort30s cohort40s cohort50s 
+> cohort60s cohort70s cohort80s cohort90s cohort2000s, by(dummy)
+(model 1 has zero variance coefficients)
+op. sys. refuses to provide memory
+r(909);
+
+. reg employed cohort2010s cohort2000s cohort90s cohort80s cohort70s cohort60s cohort50s cohort40s cohort30s cohort20s cohort10s cohor
+> t1900s somecollege college morecollege female black hispanic asian other if year==2007
+note: cohort2010s omitted because of collinearity
+note: cohort20s omitted because of collinearity
+note: cohort1900s omitted because of collinearity
+
+      Source |       SS       df       MS              Number of obs = 2994662
+-------------+------------------------------           F( 17,2994644) =       .
+       Model |  321876.131    17    18933.89           Prob > F      =  0.0000
+    Residual |      4236082994644  .141455211           R-squared     =  0.4318
+-------------+------------------------------           Adj R-squared =  0.4318
+       Total |   745484.132994661  .248937736           Root MSE      =  .37611
+
+------------------------------------------------------------------------------
+    employed |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+ cohort2010s |          0  (omitted)
+ cohort2000s |  -.0008291   .0012724    -0.65   0.515     -.003323    .0016648
+   cohort90s |   .0516345   .0012146    42.51   0.000      .049254    .0540149
+   cohort80s |   .5795194   .0012322   470.32   0.000     .5771044    .5819345
+   cohort70s |   .6828233   .0012357   552.57   0.000     .6804013    .6852453
+   cohort60s |   .6999001   .0012017   582.41   0.000     .6975447    .7022554
+   cohort50s |   .6663986   .0011951   557.63   0.000     .6640563    .6687408
+   cohort40s |   .4106705   .0012356   332.36   0.000     .4082487    .4130922
+   cohort30s |   .1028566   .0013276    77.47   0.000     .1002545    .1054586
+   cohort20s |          0  (omitted)
+   cohort10s |  -.0196693   .0023795    -8.27   0.000     -.024333   -.0150055
+ cohort1900s |          0  (omitted)
+ somecollege |   .0969854    .000602   161.10   0.000     .0958054    .0981653
+     college |   .1540895   .0007271   211.92   0.000     .1526644    .1555146
+ morecollege |   .1918583   .0008954   214.26   0.000     .1901033    .1936134
+      female |  -.0718941   .0004361  -164.86   0.000    -.0727488   -.0710394
+       black |  -.0691152   .0007496   -92.20   0.000    -.0705845   -.0676459
+    hispanic |  -.0245173   .0006851   -35.79   0.000    -.0258601   -.0231745
+       asian |  -.0568208   .0010876   -52.24   0.000    -.0589525   -.0546891
+       other |  -.0574215   .0014046   -40.88   0.000    -.0601745   -.0546685
+       _cons |   .0533555   .0010926    48.83   0.000     .0512141     .055497
+------------------------------------------------------------------------------
+
+. reg employed cohort2000s cohort90s cohort80s cohort70s cohort60s cohort50s cohort40s cohort30s cohort20s somecollege college morecol
+> lege female black hispanic asian other if year==2007
+
+      Source |       SS       df       MS              Number of obs = 2994662
+-------------+------------------------------           F( 17,2994644) =       .
+       Model |  321876.131    17    18933.89           Prob > F      =  0.0000
+    Residual |      4236082994644  .141455211           R-squared     =  0.4318
+-------------+------------------------------           Adj R-squared =  0.4318
+       Total |   745484.132994661  .248937736           Root MSE      =  .37611
+
+------------------------------------------------------------------------------
+    employed |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+ cohort2000s |   .0188402   .0022581     8.34   0.000     .0144144     .023266
+   cohort90s |   .0713037   .0022259    32.03   0.000      .066941    .0756665
+   cohort80s |   .5991887   .0022394   267.57   0.000     .5947995    .6035779
+   cohort70s |   .7024926    .002242   313.34   0.000     .6980984    .7068868
+   cohort60s |   .7195693    .002223   323.69   0.000     .7152123    .7239264
+   cohort50s |   .6860679   .0022192   309.15   0.000     .6817182    .6904175
+   cohort40s |   .4303398   .0022409   192.04   0.000     .4259478    .4347318
+   cohort30s |   .1225258   .0022917    53.47   0.000     .1180342    .1270175
+   cohort20s |   .0196693   .0023795     8.27   0.000     .0150055     .024333
+ somecollege |   .0969854    .000602   161.10   0.000     .0958054    .0981653
+     college |   .1540895   .0007271   211.92   0.000     .1526644    .1555146
+ morecollege |   .1918583   .0008954   214.26   0.000     .1901033    .1936134
+      female |  -.0718941   .0004361  -164.86   0.000    -.0727488   -.0710394
+       black |  -.0691152   .0007496   -92.20   0.000    -.0705845   -.0676459
+    hispanic |  -.0245173   .0006851   -35.79   0.000    -.0258601   -.0231745
+       asian |  -.0568208   .0010876   -52.24   0.000    -.0589525   -.0546891
+       other |  -.0574215   .0014046   -40.88   0.000    -.0601745   -.0546685
+       _cons |   .0336863   .0021657    15.55   0.000     .0294415     .037931
+------------------------------------------------------------------------------
+
+. reg employed cohort2000s cohort90s cohort80s cohort70s cohort60s cohort50s cohort40s cohort30s cohort20s somecollege college morecol
+> lege female black hispanic asian other if year==2012
+
+      Source |       SS       df       MS              Number of obs = 3113030
+-------------+------------------------------           F( 17,3113012) =       .
+       Model |  296995.918    17  17470.3481           Prob > F      =  0.0000
+    Residual |  471262.2413113012  .151384653           R-squared     =  0.3866
+-------------+------------------------------           Adj R-squared =  0.3866
+       Total |  768258.1583113029  .246787986           Root MSE      =  .38908
+
+------------------------------------------------------------------------------
+    employed |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+ cohort2000s |   .0067831   .0013015     5.21   0.000     .0042323    .0093339
+   cohort90s |   .2425619   .0012929   187.61   0.000     .2400279    .2450959
+   cohort80s |   .6080204   .0013422   453.01   0.000     .6053898    .6106511
+   cohort70s |   .6387697   .0013389   477.10   0.000     .6361456    .6413938
+   cohort60s |   .6477351   .0013074   495.42   0.000     .6451725    .6502976
+   cohort50s |   .5476572   .0013025   420.48   0.000     .5451045      .55021
+   cohort40s |   .2018642   .0013463   149.94   0.000     .1992255    .2045029
+   cohort30s |   .0213774    .001461    14.63   0.000     .0185138     .024241
+   cohort20s |  -.0312294   .0017841   -17.50   0.000    -.0347261   -.0277327
+ somecollege |    .141632   .0005792   244.52   0.000     .1404967    .1427672
+     college |   .1949899   .0007337   265.76   0.000     .1935518    .1964279
+ morecollege |   .2371013   .0008867   267.40   0.000     .2353635    .2388392
+      female |   -.054178   .0004423  -122.50   0.000    -.0550449   -.0533112
+       black |  -.0803686   .0007332  -109.62   0.000    -.0818055   -.0789316
+    hispanic |  -.0138999   .0006647   -20.91   0.000    -.0152026   -.0125971
+       asian |  -.0357427   .0010531   -33.94   0.000    -.0378067   -.0336787
+       other |  -.0644206   .0012644   -50.95   0.000    -.0668988   -.0619424
+       _cons |   .0371358   .0011744    31.62   0.000     .0348341    .0394376
+------------------------------------------------------------------------------
+
+. oaxaca employed cohort2000s cohort90s cohort80s cohort70s cohort60s cohort50s cohort40s cohort30s cohort20s somecollege college more
+> college female black hispanic asian other, by(dummy)
+
+Blinder-Oaxaca decomposition                      Number of obs   =    6107692
+                                                  Model           =     linear
+Group 1: dummy = 0                                N of obs 1      =    2994662
+Group 2: dummy = 1                                N of obs 2      =    3113030
+
+------------------------------------------------------------------------------
+    employed |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+overall      |
+     group_1 |   .4674063   .0002883  1621.15   0.000     .4668412    .4679714
+     group_2 |   .4433247   .0002816  1574.53   0.000     .4427728    .4438765
+  difference |   .0240817    .000403    59.76   0.000     .0232918    .0248715
+  endowments |   .0060657   .0002524    24.03   0.000      .005571    .0065605
+coefficients |   .0136499   .0003235    42.20   0.000     .0130159    .0142838
+ interaction |   .0043661   .0001236    35.33   0.000     .0041239    .0046083
+-------------+----------------------------------------------------------------
+endowments   |
+ cohort2000s |   -.000151    .000029    -5.20   0.000    -.0002078   -.0000941
+   cohort90s |    .001026   .0000673    15.25   0.000     .0008941    .0011578
+   cohort80s |   .0023538   .0001583    14.86   0.000     .0020434    .0026641
+   cohort70s |   .0011172   .0001667     6.70   0.000     .0007905    .0014439
+   cohort60s |   .0024872    .000183    13.59   0.000     .0021286    .0028458
+   cohort50s |   .0017468   .0001571    11.12   0.000     .0014389    .0020547
+   cohort40s |   .0011112   .0000514    21.62   0.000     .0010104    .0012119
+   cohort30s |   .0002155   .0000153    14.05   0.000     .0001854    .0002456
+   cohort20s |  -.0005389   .0000311   -17.31   0.000    -.0005999   -.0004779
+ somecollege |   -.003166     .00005   -63.32   0.000     -.003264    -.003068
+     college |  -.0005903    .000053   -11.15   0.000    -.0006941   -.0004865
+ morecollege |   -.001079   .0000511   -21.13   0.000    -.0011791   -.0009789
+      female |  -.0000817   .0000219    -3.73   0.000    -.0001247   -.0000387
+       black |   .0007628   .0000208    36.61   0.000      .000722    .0008037
+    hispanic |   .0002191   .0000111    19.66   0.000     .0001973     .000241
+       asian |   .0001659   7.74e-06    21.44   0.000     .0001507    .0001811
+       other |   .0004672   .0000126    37.00   0.000     .0004424    .0004919
+-------------+----------------------------------------------------------------
+coefficients |
+ cohort2000s |    .001444   .0003122     4.63   0.000     .0008322    .0020558
+   cohort90s |  -.0227248   .0003432   -66.22   0.000    -.0233974   -.0220522
+   cohort80s |   -.001017   .0003007    -3.38   0.001    -.0016063   -.0004277
+   cohort70s |   .0074499   .0003055    24.38   0.000     .0068511    .0080487
+   cohort60s |   .0100469    .000361    27.83   0.000     .0093393    .0107544
+   cohort50s |   .0201424   .0003755    53.64   0.000     .0194065    .0208783
+   cohort40s |   .0241875   .0002796    86.51   0.000     .0236395    .0247355
+   cohort30s |   .0060991   .0001644    37.09   0.000     .0057768    .0064214
+   cohort20s |   .0013295   .0000778    17.08   0.000      .001177    .0014821
+ somecollege |  -.0108183   .0002027   -53.36   0.000    -.0112156    -.010421
+     college |  -.0053421   .0001351   -39.53   0.000     -.005607   -.0050772
+ morecollege |  -.0035511   .0000991   -35.82   0.000    -.0037454   -.0033567
+      female |  -.0090832   .0003185   -28.52   0.000    -.0097074    -.008459
+       black |   .0011963   .0001115    10.73   0.000     .0009778    .0014148
+    hispanic |  -.0014868   .0001337   -11.12   0.000    -.0017488   -.0012248
+       asian |  -.0009986   .0000718   -13.91   0.000    -.0011393    -.000858
+       other |   .0002257    .000061     3.70   0.000     .0001063    .0003452
+       _cons |  -.0034496   .0024637    -1.40   0.161    -.0082783    .0013791
+-------------+----------------------------------------------------------------
+interaction  |
+ cohort2000s |  -.0002683   .0000581    -4.62   0.000    -.0003822   -.0001545
+   cohort90s |  -.0007244   .0000486   -14.91   0.000    -.0008196   -.0006292
+   cohort80s |  -.0000342   .0000104    -3.30   0.001    -.0000545   -.0000139
+   cohort70s |   .0001114   .0000172     6.46   0.000     .0000777    .0001452
+   cohort60s |   .0002758   .0000226    12.22   0.000     .0002316    .0003201
+   cohort50s |   .0004415   .0000405    10.89   0.000      .000362    .0005209
+   cohort40s |   .0012576   .0000593    21.20   0.000     .0011414    .0013739
+   cohort30s |   .0010196   .0000341    29.93   0.000     .0009529    .0010864
+   cohort20s |   .0008784   .0000519    16.93   0.000     .0007767      .00098
+ somecollege |    .000998   .0000241    41.42   0.000     .0009508    .0010452
+     college |   .0001238   .0000115    10.74   0.000     .0001012    .0001464
+ morecollege |   .0002059   .0000113    18.25   0.000     .0001838     .000228
+      female |  -.0000267   7.23e-06    -3.70   0.000    -.0000409   -.0000126
+       black |  -.0001068   .0000103   -10.34   0.000    -.0001271   -.0000866
+    hispanic |   .0001674   .0000153    10.92   0.000     .0001373    .0001974
+       asian |   .0000978   7.87e-06    12.44   0.000     .0000824    .0001133
+       other |  -.0000508   .0000137    -3.69   0.000    -.0000777   -.0000238
+------------------------------------------------------------------------------
+
+. help oaxaca
+
+. oaxaca employed cohort2000s cohort90s cohort80s cohort70s cohort60s cohort50s cohort40s cohort30s cohort20s somecollege college more
+> college female black hispanic asian other, by(dummy) logit
+(cohort2000s dropped from model 1)
+(cohort2000s dropped from model 2)
+dropped coefficients or zero variances encountered
+specify -noisily- to view model estimation output
+specify -relax- to ingnore
+r(499);
+
+. oaxaca employed cohort90s cohort80s cohort70s cohort60s cohort50s cohort40s cohort30s cohort20s somecollege college morecollege fema
+> le black hispanic asian other, by(dummy) logit
+
+Blinder-Oaxaca decomposition                      Number of obs   =    6107692
+                                                  Model           =      logit
+Group 1: dummy = 0                                N of obs 1      =    2994662
+Group 2: dummy = 1                                N of obs 2      =    3113030
+
+------------------------------------------------------------------------------
+    employed |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+overall      |
+     group_1 |   .4674063   .0003051  1532.05   0.000     .4668084    .4680043
+     group_2 |   .4433247   .0003496  1267.96   0.000     .4426394    .4440099
+  difference |   .0240817    .000464    51.90   0.000     .0231722    .0249911
+  endowments |   .0049773   .0003734    13.33   0.000     .0042455    .0057091
+coefficients |   .0126406   .0003151    40.11   0.000     .0120229    .0132583
+ interaction |   .0064638   .0001265    51.10   0.000     .0062158    .0067117
+-------------+----------------------------------------------------------------
+endowments   |
+   cohort90s |   .0005241   .0000486    10.79   0.000     .0004289    .0006193
+   cohort80s |   .0005923   .0000622     9.53   0.000     .0004705    .0007141
+   cohort70s |    .000273   .0000488     5.59   0.000     .0001773    .0003687
+   cohort60s |    .000603    .000068     8.87   0.000     .0004697    .0007362
+   cohort50s |   .0004709   .0000583     8.08   0.000     .0003567    .0005851
+   cohort40s |   .0006541    .000053    12.35   0.000     .0005503     .000758
+   cohort30s |    .000946   .0000631    15.00   0.000     .0008224    .0010696
+   cohort20s |   .0012085   .0000793    15.24   0.000      .001053    .0013639
+ somecollege |  -.0003092     .00002   -15.47   0.000    -.0003483     -.00027
+     college |  -.0000593   5.81e-06   -10.21   0.000    -.0000707   -.0000479
+ morecollege |  -.0001125   8.37e-06   -13.45   0.000    -.0001289   -.0000961
+      female |  -.0000102   2.78e-06    -3.67   0.000    -.0000156   -4.75e-06
+       black |   .0000894   6.63e-06    13.49   0.000     .0000764    .0001024
+    hispanic |   .0000249   2.21e-06    11.27   0.000     .0000206    .0000292
+       asian |   .0000205   1.68e-06    12.25   0.000     .0000172    .0000238
+       other |   .0000618   4.56e-06    13.54   0.000     .0000529    .0000707
+-------------+----------------------------------------------------------------
+coefficients |
+   cohort90s |  -.0270404   .0013384   -20.20   0.000    -.0296636   -.0244172
+   cohort80s |  -.0102707   .0001642   -62.56   0.000    -.0105925   -.0099489
+   cohort70s |  -.0075173   .0001877   -40.06   0.000    -.0078851   -.0071494
+   cohort60s |  -.0084977   .0002524   -33.67   0.000    -.0089924   -.0080031
+   cohort50s |  -.0056006   .0004897   -11.44   0.000    -.0065603   -.0046409
+   cohort40s |  -.0012359   .0005746    -2.15   0.031    -.0023621   -.0001098
+   cohort30s |  -.0016624   .0002563    -6.48   0.000    -.0021648   -.0011599
+   cohort20s |  -.0007466   .0001184    -6.31   0.000    -.0009787   -.0005146
+ somecollege |  -.0039144   .0003234   -12.10   0.000    -.0045483   -.0032805
+     college |  -.0018267   .0001579   -11.57   0.000    -.0021363   -.0015172
+ morecollege |  -.0012374   .0001094   -11.31   0.000    -.0014518    -.001023
+      female |  -.0052655    .000448   -11.75   0.000    -.0061435   -.0043875
+       black |   .0003127   .0000585     5.34   0.000      .000198    .0004274
+    hispanic |   -.000865   .0000951    -9.10   0.000    -.0010514   -.0006787
+       asian |  -.0005366    .000055    -9.76   0.000    -.0006444   -.0004289
+       other |   .0000542   .0000314     1.73   0.084    -7.29e-06    .0001157
+       _cons |    .088491    .001489    59.43   0.000     .0855725    .0914094
+-------------+----------------------------------------------------------------
+interaction  |
+   cohort90s |   .0028695   .0004004     7.17   0.000     .0020848    .0036542
+   cohort80s |   .0011494   .0001374     8.36   0.000     .0008801    .0014188
+   cohort70s |   .0003744   .0000628     5.96   0.000     .0002513    .0004974
+   cohort60s |   .0007767   .0000818     9.50   0.000     .0006164    .0009369
+   cohort50s |   .0004086   .0000438     9.32   0.000     .0003227    .0004945
+   cohort40s |   .0002139    .000083     2.58   0.010     .0000513    .0003766
+   cohort30s |   .0009252   .0000828    11.17   0.000     .0007628    .0010875
+   cohort20s |   .0016421   .0001455    11.29   0.000      .001357    .0019273
+ somecollege |  -.0012022   .0002096    -5.74   0.000    -.0016129   -.0007915
+     college |   -.000141   .0000278    -5.07   0.000    -.0001954   -.0000865
+ morecollege |  -.0002389   .0000435    -5.49   0.000    -.0003242   -.0001535
+      female |   .0000516   .0000164     3.15   0.002     .0000195    .0000836
+       black |    .000093    .000022     4.22   0.000     .0000498    .0001362
+    hispanic |  -.0003242   .0000617    -5.26   0.000     -.000445   -.0002033
+       asian |   -.000175   .0000327    -5.35   0.000    -.0002391   -.0001109
+       other |   .0000406   .0000241     1.69   0.092    -6.59e-06    .0000877
+------------------------------------------------------------------------------
+
+. clear
+
+. clear
+
+. clear matrix
+
+. capture cd "/Users/robertackerman/Desktop/School/Econ 880/Final Paper"
+
+. use ACS2011_Partial.dta
+
+. counterfactual lincwage age female morecollege raceb raceh raceo married urban nchild mismatch1 mistmatch2 mistmatch3 mistmatch4 if 
+> wkswork2>=5 & empstat==1, group(stem)
+variable lincwage not found
+r(111);
+
+. replace incwage=. if incwage==999999
+(0 real changes made)
+
+. gen lincwage = log(incwage)
+(1659731 missing values generated)
+
+. counterfactual lincwage age female morecollege raceb raceh raceo married urban nchild mismatch1 mistmatch2 mistmatch3 mistmatch4 if 
+> wkswork2>=5 & empstat==1, group(stem)
+variable mistmatch2 not found
+r(111);
+
+. counterfactual lincwage age female morecollege raceb raceh raceo married urban nchild mismatch1 mismatch2 mismatch3 mismatch4 if wks
+> work2>=5 & empstat==1, group(stem)
+--Break--
+r(1);
+
+. webuse nlsw88, clear
+(NLSW, 1988 extract)
+
+. gen lwage=log(wage)
+
+. 
+. counterfactual lwage tenure ttl_exp grade, group(union) noboot
+
+Conditional model                         linear quantile regression
+Number of regressions estimated           100     
+
+The variance has not been computed.
+Do not turn the option boot off if you want to compute it.
+
+No. of obs. in the reference group        1407    
+No. of obs. in the counterfactual group   459     
+
+
+Quantile Treatment Effects
+------------------------------------------------------------------------------
+            |            Pointwise     Pointwise              Functional      
+Quantile    |     QTE    Std. Err. [95% Conf. Interval]  [95% Conf. Interval] 
+------------+-----------------------------------------------------------------
+.1          |   .051596         .          .         .            .         .
+.2          |   .063973         .          .         .            .         .
+.3          |   .072542         .          .         .            .         .
+.4          |   .077546         .          .         .            .         .
+.5          |   .085896         .          .         .            .         .
+.6          |   .093463         .          .         .            .         .
+.7          |   .099599         .          .         .            .         .
+.8          |   .102995         .          .         .            .         .
+.9          |   .102612         .          .         .            .         .
+------------------------------------------------------------------------------
+
+. 
+. counterfactual lwage tenure ttl_exp grade, group(union)
+(bootstrapping ....................................................................................................)
+
+Conditional model                         linear quantile regression
+Number of regressions estimated           100     
+
+The variance has been estimated by bootstraping the results 100 times.
+
+No. of obs. in the reference group        1407    
+No. of obs. in the counterfactual group   459     
+
+
+Quantile Treatment Effects
+------------------------------------------------------------------------------
+            |            Pointwise     Pointwise              Functional      
+Quantile    |     QTE    Std. Err. [95% Conf. Interval]  [95% Conf. Interval] 
+------------+-----------------------------------------------------------------
+.1          |   .051596   .017127    .018027   .085165      .010032   .093159
+.2          |   .063973   .018903    .026923   .101023        .0181   .109846
+.3          |   .072542    .01969     .03395   .111133       .02476   .120324
+.4          |   .077546   .020473     .03742   .117671      .027864   .127227
+.5          |   .085896   .021744    .043279   .128513      .033129   .138662
+.6          |   .093463   .022412    .049535    .13739      .039074   .147852
+.7          |   .099599   .023597     .05335   .145847      .042336   .156861
+.8          |   .102995   .024679    .054625   .151366      .043106   .162885
+.9          |   .102612   .024077    .055422   .149802      .044183   .161041
+------------------------------------------------------------------------------
+
+
+Bootstrap inference on the counterfactual quantile processes
+------------------------------------------------------------------------------
+                                               |            P-values 
+Null-hypothesis                                | KS-statistic   CMS-statistic
+-----------------------------------------------+------------------------------
+Correct specification of the parametric model  |        1              1
+No effect: QTE(tau)=0 for all taus             |        0              0
+Constant effect: QTE(tau)=QTE(0.5) for all taus|      .09            .04
+Stochastic dominance: QTE(tau)>0 for all taus  |      .66            .66
+Stochastic dominance: QTE(tau)<0 for all taus  |        0              0
+------------------------------------------------------------------------------
+
+. 
+. clear
+
+. clear
+
+. clear matrix
+
+. capture cd "/Users/robertackerman/Desktop/School/Econ 880/Final Paper"
+
+. use ACS2011_Partial.dta
+
+. counterfactual lincwage age female morecollege raceb raceh raceo married urban nchild mismatch1 mismatch2 mismatch3 mismatch4 if wks
+> work2>=5 & empstat==1, group(stem) noboot
+variable lincwage not found
+r(111);
+
+. gen lincwage=log(incwage)
+(1659731 missing values generated)
+
+. counterfactual lincwage age female morecollege raceb raceh raceo married urban nchild mismatch1 mismatch2 mismatch3 mismatch4 if wks
+> work2>=5 & empstat==1, group(stem) noboot
+--Break--
+r(1);
+
+. tab empstat
+
+ Employment status |
+ [general version] |      Freq.     Percent        Cum.
+-------------------+-----------------------------------
+               N/A |    591,698       19.01       19.01
+          Employed |  1,362,403       43.78       62.79
+        Unemployed |    147,169        4.73       67.52
+Not in labor force |  1,010,747       32.48      100.00
+-------------------+-----------------------------------
+             Total |  3,112,017      100.00
+
+. gen employed=0
+
+. replace employed=1 if empstat==1
+(1362403 real changes made)
+
+. probit employed age female morecollege raceb raceh raceo married urban nchild mismatch1 mismatch2 mistmatch3 mismatch4
+variable mistmatch3 not found
+r(111);
+
+. probit employed age female morecollege raceb raceh raceo married urban nchild mismatch1 mismatch2 mismatch3 mismatch4
+
+Iteration 0:   log likelihood = -1963038.6  
+Iteration 1:   log likelihood = -1710328.6  
+Iteration 2:   log likelihood = -1707146.9  
+Iteration 3:   log likelihood = -1707135.4  
+Iteration 4:   log likelihood = -1707135.4  
+
+Probit regression                                 Number of obs   =    2863185
+                                                  LR chi2(13)     =  511806.50
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -1707135.4                       Pseudo R2       =     0.1304
+
+------------------------------------------------------------------------------
+    employed |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   .0001111    .000039     2.85   0.004     .0000348    .0001875
+      female |  -.1745964   .0015924  -109.64   0.000    -.1777174   -.1714754
+ morecollege |   .5827713   .0031969   182.29   0.000     .5765054    .5890372
+       raceb |   -.128193   .0025752   -49.78   0.000    -.1332403   -.1231457
+       raceh |   -.121435   .0023566   -51.53   0.000     -.126054   -.1168161
+       raceo |   -.247564   .0047711   -51.89   0.000    -.2569152   -.2382128
+     married |   .4807954   .0019267   249.55   0.000     .4770191    .4845716
+       urban |   .0917354   .0019222    47.72   0.000      .087968    .0955028
+      nchild |   .2842774   .0009456   300.62   0.000     .2824241    .2861308
+   mismatch1 |   1.472426   .0080523   182.86   0.000     1.456644    1.488209
+   mismatch2 |   1.805076   .0087863   205.44   0.000     1.787855    1.822297
+   mismatch3 |   .7274691   .0170436    42.68   0.000     .6940644    .7608739
+   mismatch4 |   1.148439   .0183316    62.65   0.000      1.11251    1.184368
+       _cons |   -.539978     .00242  -223.13   0.000    -.5447212   -.5352349
+------------------------------------------------------------------------------
+
+. reg employed age female morecollege raceb raceh raceo married urban nchild mismatch1 mismatch2 mismatch3 mismatch4
+
+      Source |       SS       df       MS              Number of obs = 2863185
+-------------+------------------------------           F( 13,2863171) =43303.71
+       Model |  115845.381    13  8911.18318           Prob > F      =  0.0000
+    Residual |  589192.9792863171   .20578337           R-squared     =  0.1643
+-------------+------------------------------           Adj R-squared =  0.1643
+       Total |   705038.362863184   .24624277           Root MSE      =  .45363
+
+------------------------------------------------------------------------------
+    employed |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |  -4.71e-06    .000013    -0.36   0.716    -.0000301    .0000207
+      female |  -.0565973   .0005403  -104.75   0.000    -.0576563   -.0555384
+ morecollege |   .2106125   .0010814   194.76   0.000      .208493     .212732
+       raceb |  -.0432331    .000872   -49.58   0.000    -.0449421    -.041524
+       raceh |   -.039926   .0007995   -49.94   0.000    -.0414929    -.038359
+       raceo |  -.0806741   .0015714   -51.34   0.000     -.083754   -.0775941
+     married |   .1778991   .0006691   265.87   0.000     .1765876    .1792105
+       urban |   .0318406   .0006545    48.65   0.000     .0305579    .0331234
+      nchild |    .097782   .0003128   312.60   0.000     .0971689     .098395
+   mismatch1 |   .4359304   .0020757   210.02   0.000     .4318621    .4399986
+   mismatch2 |   .4861467   .0019273   252.25   0.000     .4823694    .4899241
+   mismatch3 |   .1857464   .0045955    40.42   0.000     .1767394    .1947534
+   mismatch4 |   .2577569   .0041383    62.29   0.000      .249646    .2658679
+       _cons |   .2998273   .0008133   368.64   0.000     .2982332    .3014214
+------------------------------------------------------------------------------
+
+. probit employed female morecollege raceb raceh raceo married urban nchild mismatch1 mismatch2 mismatch3 mismatch4  indicmajgrp1 indi
+> cmajgrp3 indicmajgrp4 indicmajgrp5 indicmajgrp6 indicmajgrp7 indicmajgrp8 indicmajgrp9 indicmajgrp10 indicmajgrp11 indicmajgrp12 ind
+> icmajgrp13 indicmajgrp14 indicmajgrp15 cohort90s cohort80s cohort70s cohort60s cohort50s cohort40s cohort30s
+
+Iteration 0:   log likelihood = -1963038.6  
+Iteration 1:   log likelihood = -1367825.4  
+Iteration 2:   log likelihood = -1357222.5  
+Iteration 3:   log likelihood = -1357074.8  
+Iteration 4:   log likelihood = -1357074.2  
+Iteration 5:   log likelihood = -1357074.2  
+
+Probit regression                                 Number of obs   =    2863185
+                                                  LR chi2(33)     = 1211928.88
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -1357074.2                       Pseudo R2       =     0.3087
+
+-------------------------------------------------------------------------------
+     employed |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+--------------+----------------------------------------------------------------
+       female |  -.1633863   .0017793   -91.83   0.000    -.1668737    -.159899
+  morecollege |   .3649317   .0043673    83.56   0.000     .3563719    .3734915
+        raceb |  -.2678111   .0028355   -94.45   0.000    -.2733687   -.2622536
+        raceh |  -.1434137   .0026055   -55.04   0.000    -.1485204    -.138307
+        raceo |  -.2709003   .0052748   -51.36   0.000    -.2812387   -.2605618
+      married |   .2202701   .0021704   101.49   0.000     .2160163     .224524
+        urban |   .0788687   .0021268    37.08   0.000     .0747002    .0830372
+       nchild |   .0303925   .0010556    28.79   0.000     .0283236    .0324615
+    mismatch1 |   .8611356    .008453   101.87   0.000     .8445681    .8777032
+    mismatch2 |   1.178255   .0092385   127.54   0.000     1.160148    1.196362
+    mismatch3 |   .4957438   .0172732    28.70   0.000      .461889    .5295987
+    mismatch4 |   .8771788   .0186785    46.96   0.000     .8405697    .9137879
+ indicmajgrp1 |   .1911142   .0171499    11.14   0.000      .157501    .2247273
+ indicmajgrp3 |   .1737725   .0094574    18.37   0.000     .1552364    .1923086
+ indicmajgrp4 |   .1991387   .0049443    40.28   0.000      .189448    .2088294
+ indicmajgrp5 |   .1570361   .0106822    14.70   0.000     .1360993    .1779729
+ indicmajgrp6 |   .2568713    .009773    26.28   0.000     .2377166     .276026
+ indicmajgrp7 |   .0443561   .0055041     8.06   0.000     .0335684    .0551439
+ indicmajgrp8 |    .241135   .0072203    33.40   0.000     .2269834    .2552865
+ indicmajgrp9 |   .3577273   .0077645    46.07   0.000     .3425092    .3729455
+indicmajgrp10 |   .0573694   .0062556     9.17   0.000     .0451087    .0696302
+indicmajgrp11 |   .1090684   .0136637     7.98   0.000     .0822881    .1358486
+indicmajgrp12 |     .04338   .0161729     2.68   0.007     .0116817    .0750784
+indicmajgrp13 |   .1744088   .0109656    15.91   0.000     .1529166    .1959011
+indicmajgrp14 |    .103409   .0083306    12.41   0.000     .0870813    .1197367
+indicmajgrp15 |   .0981746   .0075169    13.06   0.000     .0834418    .1129074
+    cohort90s |   .9212519   .0087581   105.19   0.000     .9040863    .9384175
+    cohort80s |   2.469246   .0088302   279.64   0.000     2.451939    2.486553
+    cohort70s |   2.514137   .0089012   282.45   0.000     2.496691    2.531583
+    cohort60s |   2.536625   .0088107   287.90   0.000     2.519356    2.553894
+    cohort50s |   2.319828   .0087405   265.41   0.000     2.302697    2.336959
+    cohort40s |   1.433224   .0088273   162.36   0.000     1.415923    1.450525
+    cohort30s |   .6416046   .0094265    68.06   0.000      .623129    .6600801
+        _cons |  -2.087681   .0087427  -238.79   0.000    -2.104816   -2.070545
+-------------------------------------------------------------------------------
+
+. probit employed female morecollege raceb raceh raceo racea married urban nchild mismatch1 mismatch2 mismatch3 mismatch4  indicmajgrp
+> 1 indicmajgrp3 indicmajgrp4 indicmajgrp5 indicmajgrp6 indicmajgrp7 indicmajgrp8 indicmajgrp9 indicmajgrp10 indicmajgrp11 indicmajgrp
+> 12 indicmajgrp13 indicmajgrp14 indicmajgrp15 cohort90s cohort80s cohort70s cohort60s cohort50s cohort40s cohort30s
+
+Iteration 0:   log likelihood = -1963038.6  
+Iteration 1:   log likelihood = -1366984.7  
+Iteration 2:   log likelihood = -1356262.3  
+Iteration 3:   log likelihood = -1356113.1  
+Iteration 4:   log likelihood = -1356112.5  
+Iteration 5:   log likelihood = -1356112.5  
+
+Probit regression                                 Number of obs   =    2863185
+                                                  LR chi2(34)     = 1213852.22
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -1356112.5                       Pseudo R2       =     0.3092
+
+-------------------------------------------------------------------------------
+     employed |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+--------------+----------------------------------------------------------------
+       female |  -.1619761   .0017802   -90.99   0.000    -.1654651   -.1584871
+  morecollege |   .3666722   .0043687    83.93   0.000     .3581097    .3752348
+        raceb |  -.2806166   .0028515   -98.41   0.000    -.2862054   -.2750278
+        raceh |  -.1577742   .0026268   -60.06   0.000    -.1629227   -.1526258
+        raceo |   -.283066   .0052839   -53.57   0.000    -.2934223   -.2727098
+        racea |  -.1832753   .0041831   -43.81   0.000     -.191474   -.1750765
+      married |   .2221533   .0021717   102.30   0.000     .2178969    .2264097
+        urban |   .0888275   .0021397    41.51   0.000     .0846338    .0930212
+       nchild |   .0312738   .0010563    29.61   0.000     .0292035    .0333441
+    mismatch1 |   .8647924   .0084619   102.20   0.000     .8482073    .8813775
+    mismatch2 |   1.180825   .0092451   127.72   0.000     1.162705    1.198945
+    mismatch3 |   .4982388   .0172947    28.81   0.000     .4643419    .5321357
+    mismatch4 |   .8785564   .0186813    47.03   0.000     .8419416    .9151712
+ indicmajgrp1 |   .1916141   .0171669    11.16   0.000     .1579677    .2252605
+ indicmajgrp3 |   .1860376   .0094657    19.65   0.000     .1674852      .20459
+ indicmajgrp4 |   .2040552   .0049492    41.23   0.000      .194355    .2137554
+ indicmajgrp5 |   .1524479   .0106891    14.26   0.000     .1314977    .1733981
+ indicmajgrp6 |   .2782751   .0097846    28.44   0.000     .2590977    .2974526
+ indicmajgrp7 |   .0403116   .0055085     7.32   0.000     .0295151    .0511081
+ indicmajgrp8 |   .2604612   .0072321    36.01   0.000     .2462865     .274636
+ indicmajgrp9 |   .3677836   .0077675    47.35   0.000     .3525595    .3830077
+indicmajgrp10 |    .057213   .0062596     9.14   0.000     .0449444    .0694817
+indicmajgrp11 |   .1088925   .0136758     7.96   0.000     .0820884    .1356967
+indicmajgrp12 |    .039727   .0161845     2.45   0.014     .0080059     .071448
+indicmajgrp13 |   .1880527   .0109695    17.14   0.000     .1665528    .2095525
+indicmajgrp14 |   .1010984   .0083343    12.13   0.000     .0847635    .1174333
+indicmajgrp15 |   .1021395   .0075217    13.58   0.000     .0873972    .1168818
+    cohort90s |   .9310673    .008767   106.20   0.000     .9138843    .9482504
+    cohort80s |    2.47946   .0088396   280.49   0.000     2.462135    2.496785
+    cohort70s |   2.523059   .0089097   283.18   0.000     2.505597    2.540522
+    cohort60s |   2.542915    .008818   288.38   0.000     2.525633    2.560198
+    cohort50s |   2.324705    .008747   265.77   0.000     2.307561    2.341849
+    cohort40s |   1.436744   .0088332   162.65   0.000     1.419431    1.454056
+    cohort30s |   .6438015   .0094323    68.26   0.000     .6253146    .6622885
+        _cons |  -2.092896   .0087499  -239.19   0.000    -2.110045   -2.075746
+-------------------------------------------------------------------------------
+
+. probit employed female morecollege raceb raceh raceo racea married urban nchild indicmajgrp1 indicmajgrp3 indicmajgrp4 indicmajgrp5 
+> indicmajgrp6 indicmajgrp7 indicmajgrp8 indicmajgrp9 indicmajgrp10 indicmajgrp11 indicmajgrp12 indicmajgrp13 indicmajgrp14 indicmajgr
+> p15 cohort90s cohort80s cohort70s cohort60s cohort50s cohort40s cohort30s
+
+Iteration 0:   log likelihood = -1963038.6  
+Iteration 1:   log likelihood = -1381094.9  
+Iteration 2:   log likelihood = -1372846.4  
+Iteration 3:   log likelihood = -1372703.1  
+Iteration 4:   log likelihood = -1372702.5  
+Iteration 5:   log likelihood = -1372702.4  
+
+Probit regression                                 Number of obs   =    2863185
+                                                  LR chi2(30)     = 1180672.32
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -1372702.4                       Pseudo R2       =     0.3007
+
+-------------------------------------------------------------------------------
+     employed |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+--------------+----------------------------------------------------------------
+       female |  -.1625693   .0017691   -91.89   0.000    -.1660366    -.159102
+  morecollege |    .214507   .0040551    52.90   0.000     .2065591    .2224548
+        raceb |  -.2765367   .0028362   -97.50   0.000    -.2820955   -.2709779
+        raceh |  -.1545129   .0026158   -59.07   0.000    -.1596398   -.1493861
+        raceo |  -.2798085   .0052578   -53.22   0.000    -.2901135   -.2695034
+        racea |  -.1742105   .0041371   -42.11   0.000    -.1823191   -.1661019
+      married |    .210935   .0021559    97.84   0.000     .2067096    .2151604
+        urban |   .0881093   .0021296    41.37   0.000     .0839353    .0922833
+       nchild |   .0282825   .0010496    26.95   0.000     .0262252    .0303397
+ indicmajgrp1 |   .5116388   .0161417    31.70   0.000     .4800016    .5432761
+ indicmajgrp3 |   .4147003   .0091194    45.47   0.000     .3968265     .432574
+ indicmajgrp4 |   .4503493   .0046283    97.30   0.000      .441278    .4594206
+ indicmajgrp5 |   .4055643   .0102782    39.46   0.000     .3854194    .4257092
+ indicmajgrp6 |    .449726   .0095832    46.93   0.000     .4309434    .4685087
+ indicmajgrp7 |   .2190585   .0052941    41.38   0.000     .2086822    .2294349
+ indicmajgrp8 |    .440068   .0070183    62.70   0.000     .4263125    .4538236
+ indicmajgrp9 |   .5230329   .0075711    69.08   0.000     .5081938    .5378719
+indicmajgrp10 |    .295436    .005932    49.80   0.000     .2838094    .3070625
+indicmajgrp11 |   .3676234   .0130428    28.19   0.000     .3420601    .3931868
+indicmajgrp12 |   .4804753   .0149272    32.19   0.000     .4512185     .509732
+indicmajgrp13 |    .393475   .0106266    37.03   0.000     .3726472    .4143027
+indicmajgrp14 |   .3385439    .008001    42.31   0.000     .3228622    .3542255
+indicmajgrp15 |   .3492278   .0071622    48.76   0.000       .33519    .3632655
+    cohort90s |   .9515847   .0087413   108.86   0.000     .9344521    .9687173
+    cohort80s |   2.522503    .008804   286.52   0.000     2.505248    2.539759
+    cohort70s |   2.555378   .0088755   287.91   0.000     2.537982    2.572773
+    cohort60s |   2.574991    .008786   293.08   0.000     2.557771    2.592212
+    cohort50s |   2.356212   .0087151   270.36   0.000     2.339131    2.373294
+    cohort40s |   1.458693   .0087999   165.76   0.000     1.441446    1.475941
+    cohort30s |   .6552782   .0093959    69.74   0.000     .6368625    .6736938
+        _cons |  -2.112989   .0087217  -242.27   0.000    -2.130083   -2.095894
+-------------------------------------------------------------------------------
+
+. probit employed female morecollege raceb raceh raceo racea married urban nchild stem cohort90s cohort80s cohort70s cohort60s cohort5
+> 0s cohort40s cohort30s
+
+Iteration 0:   log likelihood = -355716.82  
+Iteration 1:   log likelihood = -275875.02  
+Iteration 2:   log likelihood = -274713.66  
+Iteration 3:   log likelihood = -274700.16  
+Iteration 4:   log likelihood = -274700.15  
+
+Probit regression                                 Number of obs   =     588740
+                                                  LR chi2(17)     =  162033.34
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -274700.15                       Pseudo R2       =     0.2278
+
+------------------------------------------------------------------------------
+    employed |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      female |  -.3739962   .0040691   -91.91   0.000    -.3819715   -.3660209
+ morecollege |   .2131869    .004097    52.04   0.000     .2051569    .2212168
+       raceb |  -.0591569   .0079106    -7.48   0.000    -.0746614   -.0436524
+       raceh |  -.0804798   .0083046    -9.69   0.000    -.0967566    -.064203
+       raceo |  -.1756275   .0142228   -12.35   0.000    -.2035036   -.1477514
+       racea |  -.2061279   .0069352   -29.72   0.000    -.2197207   -.1925352
+     married |   .0365123   .0045238     8.07   0.000     .0276458    .0453788
+       urban |   .0414697   .0055463     7.48   0.000     .0305991    .0523403
+      nchild |  -.0282314   .0022669   -12.45   0.000    -.0326744   -.0237885
+        stem |   .0212019   .0049943     4.25   0.000     .0114133    .0309906
+   cohort90s |   2.099803   .0356472    58.91   0.000     2.029936     2.16967
+   cohort80s |   2.798765   .0172769   161.99   0.000     2.764902    2.832627
+   cohort70s |   2.878822   .0174072   165.38   0.000     2.844704    2.912939
+   cohort60s |    2.87704   .0173584   165.74   0.000     2.843018    2.911062
+   cohort50s |   2.552254   .0170498   149.69   0.000     2.518837    2.585671
+   cohort40s |   1.543263   .0170833    90.34   0.000     1.509781    1.576746
+   cohort30s |   .6679482   .0183374    36.43   0.000     .6320077    .7038888
+       _cons |   -1.67077   .0174962   -95.49   0.000    -1.705062   -1.636478
+------------------------------------------------------------------------------
+
+. clear
+
+. 
+. clear
+
+. clear matrix
+
+. capture cd "/Users/robertackerman/Desktop/School/Econ 873"
+
+. log using "Econ873_Final_Project_Ackerman_v2.log", replace
+log file already open
+r(604);
+
+. 
+. *load 2011 ACS Data
+
+. use ACS_2001_2012.dta
+
+. set more off
+
+. drop if year<=2006
+(10504237 observations deleted)
+
+. drop if year==2008
+(3000657 observations deleted)
+
+. drop if year==2009
+(3030728 observations deleted)
+
+. drop if year==2010
+(3061692 observations deleted)
+
+. drop if year==2011
+(3112017 observations deleted)
+
+. gen employed=0
+
+. replace employed==1 if empstat==1
+== invalid name
+r(198);
+
+. replace employed=1 if empstat==1
+(2779807 real changes made)
+
+. mean employed if birthyr==2
+no observations
+r(2000);
+
+. mean employed if birthyr==1990
+
+Mean estimation                     Number of obs    =   81774
+
+--------------------------------------------------------------
+             |       Mean   Std. Err.     [95% Conf. Interval]
+-------------+------------------------------------------------
+    employed |   .4558539   .0017417      .4524403    .4592676
+--------------------------------------------------------------
+
+. mean employed if birthyr==1980
+
+Mean estimation                     Number of obs    =   71433
+
+--------------------------------------------------------------
+             |       Mean   Std. Err.     [95% Conf. Interval]
+-------------+------------------------------------------------
+    employed |   .7434379   .0016341      .7402351    .7466407
+--------------------------------------------------------------
+
+. mean employed if birthyr==1949
+
+Mean estimation                     Number of obs    =   80580
+
+--------------------------------------------------------------
+             |       Mean   Std. Err.     [95% Conf. Interval]
+-------------+------------------------------------------------
+    employed |   .5545669   .0017509      .5511352    .5579986
+--------------------------------------------------------------
+
+. mean employed if birthyr==1950
+
+Mean estimation                     Number of obs    =   81503
+
+--------------------------------------------------------------
+             |       Mean   Std. Err.     [95% Conf. Interval]
+-------------+------------------------------------------------
+    employed |   .5889354   .0017235      .5855574    .5923134
+--------------------------------------------------------------
+
+. mean employed, over(birthyear)
+variable birthyear not found
+invalid over() option
+r(111);
+
+. mean employed, by(birthyear)
+option by() not allowed
+r(198);
+
+. mean employed, over(birthyr)
+
+Mean estimation                     Number of obs    = 6107692
+
+    _subpop_1: birthyr = 1912
+    _subpop_2: birthyr = 1913
+    _subpop_3: birthyr = 1914
+    _subpop_4: birthyr = 1915
+    _subpop_5: birthyr = 1916
+    _subpop_6: birthyr = 1917
+    _subpop_7: birthyr = 1918
+    _subpop_8: birthyr = 1919
+    _subpop_9: birthyr = 1920
+   _subpop_10: birthyr = 1921
+   _subpop_11: birthyr = 1922
+   _subpop_12: birthyr = 1923
+   _subpop_13: birthyr = 1924
+   _subpop_14: birthyr = 1925
+   _subpop_15: birthyr = 1926
+   _subpop_16: birthyr = 1927
+   _subpop_17: birthyr = 1928
+   _subpop_18: birthyr = 1929
+   _subpop_19: birthyr = 1930
+   _subpop_20: birthyr = 1931
+   _subpop_21: birthyr = 1932
+   _subpop_22: birthyr = 1933
+   _subpop_23: birthyr = 1934
+   _subpop_24: birthyr = 1935
+   _subpop_25: birthyr = 1936
+   _subpop_26: birthyr = 1937
+   _subpop_27: birthyr = 1938
+   _subpop_28: birthyr = 1939
+   _subpop_29: birthyr = 1940
+   _subpop_30: birthyr = 1941
+   _subpop_31: birthyr = 1942
+   _subpop_32: birthyr = 1943
+   _subpop_33: birthyr = 1944
+   _subpop_34: birthyr = 1945
+   _subpop_35: birthyr = 1946
+   _subpop_36: birthyr = 1947
+   _subpop_37: birthyr = 1948
+   _subpop_38: birthyr = 1949
+   _subpop_39: birthyr = 1950
+   _subpop_40: birthyr = 1951
+   _subpop_41: birthyr = 1952
+   _subpop_42: birthyr = 1953
+   _subpop_43: birthyr = 1954
+   _subpop_44: birthyr = 1955
+   _subpop_45: birthyr = 1956
+   _subpop_46: birthyr = 1957
+   _subpop_47: birthyr = 1958
+   _subpop_48: birthyr = 1959
+   _subpop_49: birthyr = 1960
+   _subpop_50: birthyr = 1961
+   _subpop_51: birthyr = 1962
+   _subpop_52: birthyr = 1963
+   _subpop_53: birthyr = 1964
+   _subpop_54: birthyr = 1965
+   _subpop_55: birthyr = 1966
+   _subpop_56: birthyr = 1967
+   _subpop_57: birthyr = 1968
+   _subpop_58: birthyr = 1969
+   _subpop_59: birthyr = 1970
+   _subpop_60: birthyr = 1971
+   _subpop_61: birthyr = 1972
+   _subpop_62: birthyr = 1973
+   _subpop_63: birthyr = 1974
+   _subpop_64: birthyr = 1975
+   _subpop_65: birthyr = 1976
+   _subpop_66: birthyr = 1977
+   _subpop_67: birthyr = 1978
+   _subpop_68: birthyr = 1979
+   _subpop_69: birthyr = 1980
+   _subpop_70: birthyr = 1981
+   _subpop_71: birthyr = 1982
+   _subpop_72: birthyr = 1983
+   _subpop_73: birthyr = 1984
+   _subpop_74: birthyr = 1985
+   _subpop_75: birthyr = 1986
+   _subpop_76: birthyr = 1987
+   _subpop_77: birthyr = 1988
+   _subpop_78: birthyr = 1989
+   _subpop_79: birthyr = 1990
+   _subpop_80: birthyr = 1991
+   _subpop_81: birthyr = 1992
+   _subpop_82: birthyr = 1993
+   _subpop_83: birthyr = 1994
+   _subpop_84: birthyr = 1995
+   _subpop_85: birthyr = 1996
+   _subpop_86: birthyr = 1997
+   _subpop_87: birthyr = 1998
+   _subpop_88: birthyr = 1999
+   _subpop_89: birthyr = 2000
+   _subpop_90: birthyr = 2001
+   _subpop_91: birthyr = 2002
+   _subpop_92: birthyr = 2003
+   _subpop_93: birthyr = 2004
+   _subpop_94: birthyr = 2005
+   _subpop_95: birthyr = 2006
+   _subpop_96: birthyr = 2007
+   _subpop_97: birthyr = 2008
+   _subpop_98: birthyr = 2009
+   _subpop_99: birthyr = 2010
+  _subpop_100: birthyr = 2011
+  _subpop_101: birthyr = 2012
+
+--------------------------------------------------------------
+        Over |       Mean   Std. Err.     [95% Conf. Interval]
+-------------+------------------------------------------------
+employed     |
+   _subpop_1 |   .0042017   .0042017     -.0040335    .0124368
+   _subpop_2 |   .0081462   .0012672      .0056626    .0106298
+   _subpop_3 |   .0103536   .0012776      .0078495    .0128578
+   _subpop_4 |   .0141825   .0013551      .0115266    .0168385
+   _subpop_5 |          0  (omitted)
+   _subpop_6 |   .0132353   .0025308      .0082749    .0181957
+   _subpop_7 |   .0092877   .0008621       .007598    .0109773
+   _subpop_8 |   .0130125   .0008619      .0113233    .0147018
+   _subpop_9 |   .0188028   .0012946      .0162654    .0213402
+  _subpop_10 |    .020529   .0014088      .0177678    .0232902
+  _subpop_11 |   .0247476   .0013008       .022198    .0272972
+  _subpop_12 |   .0267505   .0012033       .024392    .0291089
+  _subpop_13 |   .0310317   .0011954      .0286888    .0333746
+  _subpop_14 |   .0336553   .0011764      .0313497    .0359609
+  _subpop_15 |   .0399392   .0012382      .0375125     .042366
+  _subpop_16 |   .0425456   .0012089      .0401762    .0449149
+  _subpop_17 |   .0532348   .0013073      .0506725     .055797
+  _subpop_18 |   .0620915   .0013727       .059401     .064782
+  _subpop_19 |   .0687657   .0013904      .0660406    .0714907
+  _subpop_20 |   .0764563   .0014352      .0736434    .0792693
+  _subpop_21 |   .0866366   .0014852      .0837256    .0895475
+  _subpop_22 |    .100658    .001582      .0975573    .1037586
+  _subpop_23 |   .1130328   .0016383      .1098217    .1162439
+  _subpop_24 |   .1287693   .0016598      .1255161    .1320224
+  _subpop_25 |   .1432212   .0017096      .1398704     .146572
+  _subpop_26 |   .1587032   .0017278      .1553167    .1620896
+  _subpop_27 |   .1782937   .0017838      .1747975      .18179
+  _subpop_28 |   .1967506   .0018109      .1932013    .2002999
+  _subpop_29 |   .2163915   .0018366      .2127918    .2199912
+  _subpop_30 |   .2400779   .0018658      .2364209    .2437348
+  _subpop_31 |   .2697214   .0018304      .2661339    .2733089
+  _subpop_32 |   .3180437   .0018339      .3144492    .3216381
+  _subpop_33 |   .3440396   .0018971      .3403213    .3477578
+  _subpop_34 |   .3829723   .0019372      .3791754    .3867692
+  _subpop_35 |   .4368645   .0019469      .4330487    .4406803
+  _subpop_36 |   .4762661   .0017126      .4729095    .4796227
+  _subpop_37 |   .5257771   .0017555      .5223364    .5292179
+  _subpop_38 |   .5545669   .0017509      .5511352    .5579986
+  _subpop_39 |   .5889354   .0017235      .5855574    .5923133
+  _subpop_40 |   .6353457   .0016702      .6320721    .6386192
+  _subpop_41 |    .656278   .0015983      .6531453    .6594106
+  _subpop_42 |   .6933713   .0015626      .6903087    .6964339
+  _subpop_43 |   .7050659   .0015282      .7020707     .708061
+  _subpop_44 |   .7192332   .0014844      .7163238    .7221425
+  _subpop_45 |   .7253212   .0014686      .7224429    .7281996
+  _subpop_46 |   .7398835   .0014011      .7371373    .7426297
+  _subpop_47 |   .7488596   .0014108      .7460944    .7516248
+  _subpop_48 |   .7536319   .0014141      .7508604    .7564034
+  _subpop_49 |   .7575226   .0014012      .7547763     .760269
+  _subpop_50 |   .7620653   .0013951      .7593309    .7647997
+  _subpop_51 |    .762071   .0013785      .7593691    .7647728
+  _subpop_52 |   .7673131   .0014059      .7645577    .7700686
+  _subpop_53 |   .7675361   .0014111      .7647703    .7703019
+  _subpop_54 |   .7670409   .0014442      .7642104    .7698715
+  _subpop_55 |   .7668874   .0014888      .7639693    .7698054
+  _subpop_56 |   .7685479   .0014708      .7656652    .7714306
+  _subpop_57 |   .7667267   .0015279       .763732    .7697214
+  _subpop_58 |   .7697472   .0015027       .766802    .7726924
+  _subpop_59 |   .7672598   .0014896      .7643402    .7701794
+  _subpop_60 |    .766425   .0014946      .7634956    .7693544
+  _subpop_61 |    .762332   .0015238      .7593453    .7653186
+  _subpop_62 |   .7604483   .0016046      .7573034    .7635933
+  _subpop_63 |   .7597089   .0016301      .7565139    .7629038
+  _subpop_64 |   .7596745   .0016331      .7564736    .7628754
+  _subpop_65 |   .7575313   .0016576      .7542826    .7607801
+  _subpop_66 |   .7516333   .0016337      .7484314    .7548353
+  _subpop_67 |   .7487143   .0016651      .7454509    .7519778
+  _subpop_68 |   .7474552   .0016652      .7441915    .7507188
+  _subpop_69 |   .7434379   .0016341      .7402352    .7466406
+  _subpop_70 |   .7402373   .0016561      .7369915    .7434831
+  _subpop_71 |   .7344478   .0016449      .7312238    .7376719
+  _subpop_72 |   .7354264   .0016829       .732128    .7387248
+  _subpop_73 |   .7199512   .0017222      .7165758    .7233266
+  _subpop_74 |    .694458   .0017468      .6910344    .6978817
+  _subpop_75 |   .6715203   .0017763      .6680389    .6750017
+  _subpop_76 |   .6448697   .0017886      .6413641    .6483754
+  _subpop_77 |   .5950488   .0017957      .5915293    .5985683
+  _subpop_78 |   .5312417   .0017771      .5277586    .5347247
+  _subpop_79 |   .4558539   .0017417      .4524403    .4592675
+  _subpop_80 |   .3630431   .0016564      .3597966    .3662896
+  _subpop_81 |   .2513695   .0014858      .2484575    .2542815
+  _subpop_82 |   .2151832   .0013921      .2124548    .2179116
+  _subpop_83 |    .168003   .0012672      .1655194    .1704866
+  _subpop_84 |   .1051276   .0010692      .1030321    .1072231
+  _subpop_85 |   .0573952    .000821      .0557861    .0590043
+  _subpop_86 |          0  (omitted)
+  _subpop_87 |          0  (omitted)
+  _subpop_88 |          0  (omitted)
+  _subpop_89 |          0  (omitted)
+  _subpop_90 |          0  (omitted)
+  _subpop_91 |          0  (omitted)
+  _subpop_92 |          0  (omitted)
+  _subpop_93 |          0  (omitted)
+  _subpop_94 |          0  (omitted)
+  _subpop_95 |          0  (omitted)
+  _subpop_96 |          0  (omitted)
+  _subpop_97 |          0  (omitted)
+  _subpop_98 |          0  (omitted)
+  _subpop_99 |          0  (omitted)
+ _subpop_100 |          0  (omitted)
+ _subpop_101 |          0  (omitted)
+--------------------------------------------------------------
+
+. help teffects
+
+. reg stem sex
+variable stem not found
+r(111);
+
+. clear
+
+. clear
+
+. clear matrix
+
+. capture cd "/Users/robertackerman/Desktop/School/Econ 880/Final Paper"
+
+. log close
+      name:  <unnamed>
+       log:  /Users/robertackerman/Desktop/School/Econ 873/Econ873_Final_Project_Ackerman_v2.log
+  log type:  text
+ closed on:   7 Apr 2014, 22:57:12
+--------------------------------------------------------------------------------------------------------------------------------------
